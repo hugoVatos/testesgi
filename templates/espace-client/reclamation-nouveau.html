@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="ERP TAFFE - Tableau de bord" />
+	<meta property="og:title" content="ERP TAFFE - Tableau de bord" />
+	<meta property="og:description" content="ERP TAFFE - Tableau de bord" />
+	<meta property="og:image" content=""/>
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>ERP TAFFE - Nouvelle réclamation</title>
+
+		<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+    <!-- Daterange picker -->
+    <link href="../template/vendor/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet">
+    <!-- Clockpicker -->
+    <link href="../template/vendor/clockpicker/css/bootstrap-clockpicker.min.css" rel="stylesheet">
+    <!-- asColorpicker -->
+    <link href="../template/vendor/jquery-asColorPicker/css/asColorPicker.min.css" rel="stylesheet">
+    <!-- Material color picker -->
+    <link href="../template/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+	
+    <!-- Pick date -->
+    <link rel="stylesheet" href="../template/vendor/pickadate/themes/default.css">
+    <link rel="stylesheet" href="../template/vendor/pickadate/themes/default.date.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Custom Stylesheet -->
+	<link href="../template/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+    <link href="../template/css/style.css" rel="stylesheet">
+    <link href="../template/css/revolucy.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--text"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+               <img class="logo-abbr" src="../template/images/logo-gruvel.png" alt="Logo">
+            </a>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		<!--**********************************
+            BLOC LIEN
+        ***********************************-->
+		<div class="chatbox">
+			<div class="chatbox-close"></div>
+			<div class="custom-tab-1">
+				<ul class="nav nav-tabs">
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="tab" href="#devis">Contrat</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-bs-toggle="tab" href="#sinistres">Sinistres</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link active" data-bs-toggle="tab" href="#clients">Clients</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane fade active show" id="clients" role="tabpanel">
+						<div class="card mb-sm-3 mb-md-0 contacts_card dz-chat-user-box">
+							<div class="card-header chat-list-header text-center">
+								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/></g></svg></a>
+								<div>
+									<h6 class="mb-1">Clients</h6>
+								</div>
+								<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
+							</div>
+							<div class="card-body contacts_body p-0 dz-scroll  " id="DZ_W_Contacts_Body">
+								<ul class="contacts">
+									<li class="active">
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="../template/images/avatar/1.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon"></span>
+											</div>
+											<div class="user_info">
+												<span style="margin: 0;">Société B</span>
+												<p>Mme Gelad Emma - 30 contrats</p>
+											</div>
+										</div>
+									</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="img_cont">
+												<img src="../template/images/avatar/2.jpg" class="rounded-circle user_img" alt=""/>
+												<span class="online_icon offline"></span>
+											</div>
+											<div class="user_info">
+												<span style="margin: 0;">Société A</span>
+												<p>M Robert Dupond - 3 contrats</p>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="sinistres" role="tabpanel">
+						<div class="card mb-sm-3 mb-md-0 contacts_card">
+							<div class="card-header chat-list-header text-center">
+								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/></g></svg></a>
+								<div>
+									<h6 class="mb-1">Sinistres</h6>
+								</div>
+								<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
+							</div>
+							<div class="card-body contacts_body p-0 dz-scroll" id="DZ_W_Contacts_Body1">
+								<ul class="contacts">
+                                    <li class="name-first-letter">EN COURS</li>
+									<li class="active">
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>#125 - Entreprise A</span>
+												<p>10/06/2021 - <span class="badge badge-warning">1500€</span></p>
+											</div>
+											<div class="ms-auto">
+												<a href="javascript:void(0);" class="btn btn-primary btn-xs sharp me-1"><i class="bi bi-pencil-fill"></i></a>
+											</div>
+										</div>
+									</li>
+                                    <li class="name-first-letter">OUVERT</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>#125 - Entreprise A</span>
+												<p>10/06/2021 - <span class="badge badge-warning">2500€</span></p>
+											</div>
+											<div class="ms-auto">
+												<a href="javascript:void(0);" class="btn btn-primary btn-xs sharp me-1"><i class="bi bi-pencil-fill"></i></a>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="card-footer"></div>
+						</div>
+					</div>
+					<div class="tab-pane fade" id="devis">
+						<div class="card mb-sm-3 mb-md-0 note_card">
+							<div class="card-header chat-list-header text-center">
+								<a href="#"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect fill="#000000" x="4" y="11" width="16" height="2" rx="1"/><rect fill="#000000" opacity="0.3" transform="translate(12.000000, 12.000000) rotate(-270.000000) translate(-12.000000, -12.000000) " x="4" y="11" width="16" height="2" rx="1"/></g></svg></a>
+								<div>
+									<h6 class="mb-1">Contrat</h6>
+								</div>
+								<a href="javascript:void(0);"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18px" height="18px" viewBox="0 0 24 24" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><rect x="0" y="0" width="24" height="24"/><circle fill="#000000" cx="5" cy="12" r="2"/><circle fill="#000000" cx="12" cy="12" r="2"/><circle fill="#000000" cx="19" cy="12" r="2"/></g></svg></a>
+							</div>
+							<div class="card-body contacts_body p-0 dz-scroll" id="DZ_W_Contacts_Body2">
+								<ul class="contacts">
+                                    <li class="name-first-letter">SIGNÉ</li>
+									<li class="active">
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>#125 - Entreprise A</span>
+												<p>10/06/2021 - <span class="badge badge-primary">1500€</span></p>
+											</div>
+											<div class="ms-auto">
+												<a href="javascript:void(0);" class="btn btn-primary btn-xs sharp me-1"><i class="bi bi-pencil-fill"></i></a>
+											</div>
+										</div>
+									</li>
+                                    <li class="name-first-letter">EN ATTENTE</li>
+									<li>
+										<div class="d-flex bd-highlight">
+											<div class="user_info">
+												<span>#125 - Entreprise A</span>
+												<p>10/06/2021 - <span class="badge badge-primary">2500€</span></p>
+											</div>
+											<div class="ms-auto">
+												<a href="javascript:void(0);" class="btn btn-primary btn-xs sharp me-1"><i class="bi bi-pencil-fill"></i></a>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--**********************************
+            Chat box End
+        ***********************************-->
+		
+				<!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+						<h2 class="font-w600 mb-0">Tableau de bord</h2>
+						</div>
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a href="#" style="color: #17a2b8;font-weight: 500;">
+                                   <img class="rounded-circle" style="margin-right: 10px;" width="40" src="../template/images/profile-image.png" alt="img"> Maxence Petit
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+				</nav>
+			</div>
+		</div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+         <div class="deznav">
+            <div class="deznav-scroll">
+				<ul class="metismenu" id="menu">
+					
+                    <li><a class="ai-icon" href="../espace-client.html" aria-expanded="false">
+							<i class="bi bi-app-indicator"></i>
+							<span class="nav-text">Tableau de bord</span>
+						</a>
+                    </li>
+                     <li><a class="ai-icon" href="../espace-client/mon-compte.html" aria-expanded="false">
+						<i class="bi bi-people"></i>
+							<span class="nav-text">Mon Compte</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-file-text"></i>
+							<span class="nav-text">Contrats</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="../espace-client/contrat.html">Mes Contrats</a></li>
+                            <li><a href="../espace-client/avenant.html">Mes Avenants</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-receipt-cutoff"></i>
+							<span class="nav-text">Quittances</span>
+						</a>
+						<ul aria-expanded="false">
+                            <li><a href="../espace-client/quittance.html">Mes Quittances</a></li>
+                            <li><a href="../espace-client/paiement.html">Mes Paiements</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="ai-icon" href="../espace-client/sinistre.html" aria-expanded="false">
+						<i class="bi bi-life-preserver"></i>
+							<span class="nav-text">Sinistres</span>
+						</a>
+                    </li>
+                    <li><a class="ai-icon" href="../espace-client/reclamation.html" aria-expanded="false">
+						<i class="bi bi-bezier2"></i>
+							<span class="nav-text">Réclamations</span>
+						</a>
+                    </li>
+                </ul>
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+		
+		<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- row -->
+            <div class="row page-titles">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item active"><a href="#">Gestion</a></li>
+						<li class="breadcrumb-item"><a href="#">Nouvelle réclamation</a></li>
+					</ol>
+            </div>
+			<div class="container-fluid">
+				<form class="needs-validation" novalidate="">
+				<div class="row">
+					<div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header"><h4 class="card-title">Réclamation</h4></div>
+                            <div class="card-body">
+                                <div class="form-validation">
+                                    
+                                        <div class="row">
+                                        	<div class="col-lg-6">
+                                                    <label class="col-lg-12 col-form-label">Objet <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+														 <select id="single-select" class="form-select">
+						                                    <option></option>
+						                                    <option> Délai de traitement</option>
+				                                            <option> Non réception de carte tiers</option>
+				                                            <option> Problème d'expertise</option>
+				                                            <option> Augmentation de tarifs</option>
+				                                            <option> Documents non reçus</option>
+				                                            <option> Autre</option>
+						                                </select>
+                                                    </div>
+                                        	</div>
+                                            <div class="col-lg-6">
+                                                    <label class="col-lg-12 col-form-label">Contrat</label>
+                                                    <div class="col-lg-12">
+														<select class="dropdown-groups form-select">
+																<option></option>
+						                                        <option>Contrat 1</option>
+						                                </select>
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                    <label class="col-lg-12 col-form-label">Date de la réclamation <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+														 <input type="text" id="date-format" class="form-control" placeholder="" required>
+                                                    </div>
+                                        	</div>
+                                            <div class="col-lg-6">
+                                                    <label class="col-lg-12 col-form-label">Fichiers<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+														     <input type="file" class="form-control-file">
+                                                    </div>
+                                        	</div>
+
+                                            <div class="col-lg-12">
+                                                    <label class="col-lg-12 col-form-label">Commentaire Réclamation<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+														 <textarea class="form-control" rows="3"></textarea>
+                                                    </div>
+                                        	</div>
+                                        </div>
+                                        
+                                    <div class="col-lg-12 ms-auto">
+                                            <button type="submit" class="btn btn-primary valider">Valider</button>
+                                         </div>
+                                    
+                                </div>
+                            </div>
+                    	</div>
+                    </div>
+				</div>
+				</form>
+            </div>
+			
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+		
+		
+		
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+		
+            <div class="copyright">
+                <p>Copyright 2021 © Revolucy</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+		
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+	</div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+        <!-- Required vendors -->
+    <script src="../template/vendor/global/global.min.js"></script>
+	<script src="../template/vendor/bootstrap-select/dist/js/bootstrap-select.min.js"></script>
+    <script src="../template/vendor/chart.js/Chart.bundle.min.js"></script>
+	<!-- Apex Chart -->
+	<script src="../template/vendor/apexchart/apexchart.js"></script>
+    
+    <!-- Daterangepicker -->
+    <!-- momment js is must -->
+    <script src="../template/vendor/moment/moment.min.js"></script>
+    <script src="../template/vendor/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <!-- clockpicker -->
+    <script src="../template/vendor/clockpicker/js/bootstrap-clockpicker.min.js"></script>
+    <!-- asColorPicker -->
+    <script src="../template/vendor/jquery-asColor/jquery-asColor.min.js"></script>
+    <script src="../template/vendor/jquery-asGradient/jquery-asGradient.min.js"></script>
+    <script src="../template/vendor/jquery-asColorPicker/js/jquery-asColorPicker.min.js"></script>
+    <!-- Material color picker -->
+    <script src="../template/vendor/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <!-- pickdate -->
+    <script src="../template/vendor/pickadate/picker.js"></script>
+    <script src="../template/vendor/pickadate/picker.time.js"></script>
+    <script src="../template/vendor/pickadate/picker.date.js"></script>
+
+    <!-- Daterangepicker -->
+    <script src="../template/js/plugins-init/bs-daterange-picker-init.js"></script>
+    <!-- Clockpicker init -->
+    <script src="../template/js/plugins-init/clock-picker-init.js"></script>
+    <!-- asColorPicker init -->
+    <script src="../template/js/plugins-init/jquery-asColorPicker.init.js"></script>
+
+    <!-- Pickdate -->
+    <script src="../template/js/plugins-init/pickadate-init.js"></script>
+
+	<script src="../template/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
+    <script src="../template/js/custom.min.js"></script>
+	<script src="../template/js/deznav-init.js"></script>
+
+	<script>
+		(function () {
+		  'use strict'
+
+		  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+		  var forms = document.querySelectorAll('.needs-validation')
+
+		  // Loop over them and prevent submission
+		  Array.prototype.slice.call(forms)
+			.forEach(function (form) {
+			  form.addEventListener('submit', function (event) {
+				if (!form.checkValidity()) {
+				  event.preventDefault()
+				  event.stopPropagation()
+				}
+
+				form.classList.add('was-validated')
+			  }, false)
+			})
+		})()
+	</script>
+	
+    
+</body>
+</html>

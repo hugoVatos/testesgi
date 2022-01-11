@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="ERP TAFFE - Tableau de bord" />
+	<meta property="og:title" content="ERP TAFFE - Tableau de bord" />
+	<meta property="og:description" content="ERP TAFFE - Tableau de bord" />
+	<meta property="og:image" content=""/>
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>ERP TAFFE - Compte assuré</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="../template/images/favicon.png" />
+	<link rel="stylesheet" href="../template/vendor/select2/css/select2.min.css">
+	<link rel="stylesheet" href="../template/vendor/chartist/css/chartist.min.css">
+	<link href="../template/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+	<!-- Style css -->
+    <link href="../template/css/style.css" rel="stylesheet">
+	<link href="../template/css/revolucy.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link href="../template/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="../template/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<!-- Datatable -->
+    <link href="../template/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+	<link href="../template/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<!-- Datatable -->
+    <link href="../template/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--text"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="../index.html" class="brand-logo">
+               <img class="logo-abbr" src="../template/images/logo-gruvel.png" alt="Logo">
+            </a>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+				<!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+						<h2 class="font-w600 mb-0">Tableau de bord</h2>
+						</div>
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a href="#" style="color: #17a2b8;font-weight: 500;">
+                                   <img class="rounded-circle" style="margin-right: 10px;" width="40" src="../template/images/profile-image.png" alt="img"> Maxence Petit
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+				</nav>
+			</div>
+		</div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="deznav">
+            <div class="deznav-scroll">
+				<ul class="metismenu" id="menu">
+					
+                    <li><a class="ai-icon" href="../espace-client.html" aria-expanded="false">
+							<i class="bi bi-app-indicator"></i>
+							<span class="nav-text">Tableau de bord</span>
+						</a>
+                    </li>
+                     <li><a class="ai-icon" href="../espace-client/mon-compte.html" aria-expanded="false">
+						<i class="bi bi-people"></i>
+							<span class="nav-text">Mon Compte</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-file-text"></i>
+							<span class="nav-text">Contrats</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="../espace-client/contrat.html">Mes Contrats</a></li>
+                            <li><a href="../espace-client/avenant.html">Mes Avenants</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-receipt-cutoff"></i>
+							<span class="nav-text">Quittances</span>
+						</a>
+						<ul aria-expanded="false">
+                            <li><a href="../espace-client/quittance.html">Mes Quittances</a></li>
+                            <li><a href="../espace-client/paiement.html">Mes Paiements</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="ai-icon" href="../espace-client/sinistre.html" aria-expanded="false">
+						<i class="bi bi-life-preserver"></i>
+							<span class="nav-text">Sinistres</span>
+						</a>
+                    </li>
+                    <li><a class="ai-icon" href="../espace-client/reclamation.html" aria-expanded="false">
+						<i class="bi bi-bezier2"></i>
+							<span class="nav-text">Réclamations</span>
+						</a>
+                    </li>
+                </ul>
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+
+		<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body" style="margin-bottom: 50px;padding-top: 0;margin-top: 95px;">
+            <!-- row -->
+			<div class="container-fluid">
+				
+				<div class="row">
+                    <div class="col-xl-12">
+                        
+                        <div class="profile-header row">
+                            <div class="profile-img col-xl-1">
+                                <img src="../template/images/profile-image.png" alt="" style="max-width: 80%;margin: 0 10%;">
+                            </div>
+                            <div class="profile-name col-xl-5">
+                                <h3><strong style="color: #000;">Maxence Petit</strong><br>Revolucy</h3>
+                            </div>
+                            <div class="profile-header-menu col-xl-6" style="text-align: right;margin-top: -20px;">
+                                <a href="#" class="btn solde" style="background: #FB3E7A;color: #fff;padding: 9px 25px;margin-right: 10px;"><i class="bi bi-bank"></i> Solde + 1200€</a>
+                                <ul class="list-unstyled">
+                                    <li><a href="mailto:maxence@revolucy.fr"><i class="bi bi-envelope"></i>maxence@revolucy.fr</a></li>
+                                    <li><a href="tel:0683621563"><i class="bi bi-telephone"></i>0683621563</a></li>
+                                    <li><a href="#"><i class="bi bi-pin-map"></i>69340 Francheville</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                <div class="col-md-12 col-lg-6">
+                    <div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title" style="margin-bottom: 20px;">Contrats <span style="float: right;" class="badge bg-primary">2</span></h5>
+                <table class="tablehisto display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Num</th>
+                            <th>Date</th>
+                            <th>Statut</th>
+                            <th>Montant</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                            <td>#250</td>
+                            <td>01/12/2010</td>
+                            <td><span class="badge" style="background-color: #54d342">Signé</span></td>
+                            <td>1200€</td>
+                        </tr>
+                         <tr>
+                            <td>#252</td>
+                            <td>01/12/2010</td>
+                            <td><span class="badge" style="background-color: #54d342">Signé</span></td>
+                            <td>1200€</td>
+                        </tr>
+                    </tbody>
+                </table> 
+                      </div>
+                  </div><div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title" style="margin-bottom: 20px;">Sinistres<span style="float: right;" class="badge bg-primary">1</span></h5>
+                <table class="tablehisto display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Num</th>
+                            <th>Date</th>
+                            <th>Contrat</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                            <td>#250</td>
+                            <td>01/12/2010</td>
+                            <td>#250</td>
+                            <td><span class="badge" style="background-color: #54d342">En cours</span></td>
+                        </tr>
+                    </tbody>
+                </table> 
+                      </div>
+                  </div>
+                  
+                  </div>
+                  
+                  
+                <div class="col-md-12 col-lg-6">
+                    <div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title" style="margin-bottom: 20px;">Réglements<span style="float: right;" class="badge bg-primary">1</span></h5>
+                    <table class="tablehisto display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Num</th>
+                            <th>Date</th>
+                            <th>Statut</th>
+                            <th>HT</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                            <td>#250</td>
+                            <td>01/12/2010</td>
+                            <td><span class="badge" style="background-color: #f54a4a">En attente de paiement</span></td>
+                            <td>100 €</td>
+                        </tr>
+                    </tbody>
+                </table> 
+                      </div>
+                  </div><div class="card">
+                      <div class="card-body">
+                          <h5 class="card-title" style="margin-bottom: 20px;">Réclamations<span style="float: right;" class="badge bg-primary">1</span></h5>
+                       <table class="tablehisto display" style="width:100%">
+                    <thead>
+                        <tr>
+                            <th>Num</th>
+                            <th>Date</th>
+                            <th>Contrat</th>
+                            <th>Statut</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                            <td>#25</td>
+                            <td>01/12/2010</td>
+                            <td>#250</td>
+                            <td><span class="badge" style="background-color: #54d342">En cours</span></td>
+                        </tr>
+                    </tbody>
+                </table>    
+                      </div>
+                  </div>
+                  </div></div>
+            </div>
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+		
+		
+	
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+		
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+	</div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="../template/vendor/global/global.min.js"></script>
+    <script src="../template/vendor/chart.js/Chart.bundle.min.js"></script>
+	<script src="../template/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
+
+	
+	<!-- Chart piety plugin files -->
+    <script src="../template/vendor/peity/jquery.peity.min.js"></script>
+	
+	<!-- Dashboard 1 -->
+	<script src="../template/vendor/select2/js/select2.full.min.js"></script>
+    <script src="../template/js/plugins-init/select2-init.js"></script>
+    <script src="../template/js/custom.min.js"></script>
+	<script src="../template/js/deznav-init.js"></script>
+
+	<!-- Datatable -->
+    <script src="../template/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../template/js/plugins-init/datatables.init.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/colreorder/1.5.4/js/dataTables.colReorder.min.js"></script>
+
+</body>
+</html>

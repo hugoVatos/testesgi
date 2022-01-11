@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="ERP TAFFE - Tableau de bord" />
+	<meta property="og:title" content="ERP TAFFE - Tableau de bord" />
+	<meta property="og:description" content="ERP TAFFE - Tableau de bord" />
+	<meta property="og:image" content=""/>
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>ERP TAFFE - Nouveau Contrat</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="../template/images/favicon.png" />
+	    <link rel="stylesheet" href="../template/vendor/select2/css/select2.min.css">
+	<link rel="stylesheet" href="../template/vendor/chartist/css/chartist.min.css">
+	<link href="../template/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+	<!-- Style css -->
+    <link href="../template/css/style.css" rel="stylesheet">
+	<link href="../template/css/revolucy.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+	<link href="../template/vendor/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--text"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+               <img class="logo-abbr" src="../template/images/logo-gruvel.png" alt="Logo">
+            </a>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		
+		<!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+						<h2 class="font-w600 mb-0">Nouveau Contrat</h2>       </div>
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown header-profile">
+                                <a class="nav-link" href="javascript:void(0);" role="button" data-bs-toggle="dropdown">
+									<div class="header-info me-3">
+										<span class="fs-16 font-w600 ">Robert Dupont</span>
+										<small class="text-end fs-14 font-w400">Direction</small>
+									</div>
+                                    <img src="../template/images/profile-image.png" width="20" alt=""/>
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end">
+                                    <a href="../template/app-profile.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-user1" xmlns="http://www.w3.org/2000/svg" class="text-primary" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                        <span class="ms-2">Mon Profil</span>
+                                    </a>
+                                    <a href="../template/login.html" class="dropdown-item ai-icon">
+                                        <svg id="icon-logout" xmlns="http://www.w3.org/2000/svg" class="text-danger" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                                        <span class="ms-2">Déconnexion</span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+				</nav>
+			</div>
+		</div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="deznav">
+            <div class="deznav-scroll">
+				<ul class="metismenu" id="menu">
+					
+                    <li><a class="ai-icon" href="../index.html" aria-expanded="false">
+							<i class="bi bi-app-indicator"></i>
+							<span class="nav-text">Tableau de bord</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-person-circle"></i>
+							<span class="nav-text">Tiers</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a class="plus" href="../tiers/tiers-nouveau.html">Nouveau Tiers</a></li>
+							<li><a href="../tiers/tiers-gestion.html">Tiers</a></li>
+                            <li><a href="../tiers/interlocuteur-gestion.html">Interlocuteurs</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-people"></i>
+							<span class="nav-text">Assurés</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a class="plus" href="../assures/assure-nouveau.html">Nouvel assuré</a></li>
+							<li><a href="../assures/assure-gestion.html">Assurés</a></li>
+							<hr>
+                            <li><a class="plus" href="../assures/rapport-visite-nouveau.html">Nouveau rapport de visite</a></li>
+                            <li><a href="../assures/rapport-visite-gestion.html">Rapports de visite</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-shop"></i>
+							<span class="nav-text">Assureurs</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a class="plus" href="../assureurs/assureur-nouveau.html">Nouvel assureur</a></li>
+							<li><a href="../assureurs/assureur-gestion.html">Assureurs</a></li>
+                            <li><a href="../assureurs/interlocuteur-gestion.html">Interlocuteurs</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-file-person"></i>
+							<span class="nav-text">Courtiers</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a class="plus" href="../courtiers/courtier-nouveau.html">Nouveau courtier</a></li>
+							<li><a href="../courtiers/courtier-gestion.html">Courtiers</a></li>
+                            <li><a href="../courtiers/interlocuteur-gestion.html">Interlocuteurs</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-building"></i>
+							<span class="nav-text">Apporteur</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a class="plus" href="../apporteurs/apporteur-nouveau.html">Nouvel apporteur</a></li>
+							<li><a href="../apporteurs/apporteur-gestion.html">Apporteurs</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-file-text"></i>
+							<span class="nav-text">Contrats</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a class="plus" href="../contrats/contrat-nouveau.html">Nouveau contrat</a></li>
+                            <li><a href="../contrats/contrat-gestion.html">Contrats</a></li>
+                            <hr>
+                            <li><a href="../contrats/prime-nouveau.html">Ajouter une prime</a></li>
+							<li><a href="../contrats/prime-gestion.html">Primes d'assurance</a></li>
+							<hr>
+							<li><a href="../contrats/prime-generation.html">Génération de prime</a></li>
+							<li><a href="../contrats/prime-generation-nouveau.html">Nouvelle génération</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-life-preserver"></i>
+							<span class="nav-text">Sinistres</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a class="plus" href="../sinistres/sinistre-nouveau.html">Nouveau Sinistre</a></li>
+							<li><a href="../sinistres/sinistre-gestion.html">Sinistres</a></li>
+                            <hr>
+                            <li><a href="../sinistres/Dispache-gestion.html">Dispaches</a></li>
+                            <hr>
+                            <li><a href="../sinistres/Dispache-generation.html">Génération de dispaches</a></li>
+                            <li><a href="../sinistres/nouvelle-generation.html">Nouvelle génération</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-bank"></i>
+							<span class="nav-text">Comptabilité</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="../comptabilite/emissions.html">Export Comptable</a></li>
+                            <hr>
+                            <li><a class="plus" href="../comptabilite/reglement-nouveau.html">Nouveau réglement tiers</a></li>
+                            <hr>
+                            <li><a href="../comptabilite/cheque-nouveau.html">Nouvelle remise</a></li>
+                            <li><a href="../comptabilite/cheque-gestion.html">Remise en banque</a></li>
+                            <hr>
+                            <li><a class="plus" href="../comptabilite/paiement-compagnie-nouveau.html">Nouveau pmt Agent</a></li>
+                            <li><a href="../comptabilite/paiement-compagnie-gestion.html">Paiement Agent</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-bezier2"></i>
+							<span class="nav-text">Gestion</span>
+						</a>
+                        <ul aria-expanded="false">
+                        	<li><a class="plus" href="../gestion/utilisateur-nouveau.html">Nouvel utilisateur</a></li>
+							<li><a href="../gestion/utilisateur-gestion.html">Utilisateurs</a></li>
+							<hr>
+							<li><a class="plus" href="../gestion/tache-nouveau.html">Nouvelle tâche</a></li>
+                            <li><a href="../gestion/tache-gestion.html">Tâches</a></li>
+                         	<hr>
+                            <li><a class="plus" href="../gestion/reclamation-nouveau.html">Nouvelle réclamation</a></li>
+                            <li><a href="../gestion/reclamation-gestion.html">Réclamations</a></li>
+                            <hr>
+                         	<li><a class="plus" href="../gestion/navire-nouveau.html">Nouveau navire</a></li>
+							<li><a href="../gestion/navire-gestion.html">Navires</a></li>
+							<hr>
+                            <li><a href="../gestion/risque.html">Risques</a></li>
+                            <li><a href="../gestion/taxe.html">Taxes</a></li>
+                            <li><a href="../gestion/optiflux.html">Optiflux</a></li>
+                            <hr>
+                            <li><a href="../gestion/ged.html">GED</a></li>
+                            <li><a href="../gestion/devises.html">Devises</a></li>
+                            <li><a href="../gestion/banques.html">Banques</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-bar-chart"></i>
+							<span class="nav-text">Exports</span>
+						</a>
+                        <ul aria-expanded="false">
+							<li><a href="../exports/recap-ordre-assurance.html">Ordre d'assurance</a></li>
+							<li><a href="../exports/compta-tiers.html">Compta Tiers</a></li><li><a href="#">Commissions</a></li>
+                            <li><a href="#">Solde assurés</a></li>
+                            <li><a href="#">Synthèse compte courant</a></li>
+                            <li><a href="#">Journal courtier</a></li>
+                        </ul>
+                    </li>
+                </ul>
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+		
+		<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- row -->
+            <div class="row page-titles">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item active"><a href="#">Contrats</a></li>
+						<li class="breadcrumb-item"><a href="#">Nouveau Contrat</a></li>
+					</ol>
+            </div>
+			
+			<div class="container-fluid">
+                <form class="needs-validation" novalidate="">
+				<div class="row">
+				    <p>Quand Contrat n'est pas ouvert -> pas de possibilité de les modifier (Sauf partie affilié)</p>
+					<div class="col-lg-3">
+                        <div class="card">
+                        	<div class="card-header">
+                                <h4 class="card-title">Client / Co-assurés</h4>
+                            </div>
+                            <div class="card-body" style="padding-bottom: 25px;">
+                                <div class="form-validation">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                   <select id="multi-value-select" multiple="multiple">
+                                                   				<option>-</option>
+						                                        <option>Maxence Petit</option>
+						                                        <option>Maxence Petit</option>
+						                                        <option>Maxence Petit</option>						                                    
+						                            </select>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Contact</h4>
+                            </div>
+                            <div class="card-body" style="padding: 22px;">
+                                <div class="col-lg-12">
+                                    <a href="#"><img class="rounded-circle" style="float: left;margin-right: 16px;" width="50" src="../template/images/profile-image.png" alt=""><strong>Société A</strong><br>Client A</a>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>                    
+                    <div class="col-lg-3">
+                        <div class="card">
+                        	<div class="card-header">
+                                <h4 class="card-title">Statut</h4>
+                            </div>
+                            <div class="card-body" style="padding-bottom: 25px;">
+                                <div class="form-validation">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                    <select class="dropdown-groups form-select">
+                                                    			<option>-</option>
+						                                        <option>Contrat Envoyé</option>
+						                                        <option>Contrat Signé</option>
+						                                        <option>Résilié par le client</option>
+						                                        <option>Résilié par l'assurance</option>		
+						                                        <option>Annulé</option>					                                    
+						                            </select>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="card">
+                        	<div class="card-header">
+                                <h4 class="card-title">Type</h4>
+                            </div>
+                            <div class="card-body" style="padding-bottom: 25px;">
+                                <div class="form-validation">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                    <select class="dropdown-groups form-select" id="typecont"  onchange="aven()">
+						                                        <option value="Nouveau Contrat">Nouveau Contrat</option>
+						                                        <option value="Avenant">Avenant</option>
+						                            </select>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                                <!-- Nav tabs -->
+                            <div class="custom-tab-1">
+<!--DEBUT TABLES-->
+                                    <ul class="nav nav-tabs">
+                                        <li class="nav-item">
+                                            <a class="nav-link active" data-bs-toggle="tab" href="#contrat">Contrat</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#assureurs"> Répartition</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#flotte">Flotte</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#signature">Téléchargement</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#publipostage">Publipostage</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a class="nav-link" data-bs-toggle="tab" href="#avenants">Avenants</a>
+                                        </li>
+                                    </ul>
+<!--FIN TABLES-->          
+                                    <div class="tab-content">
+<!--DEBUT CONTRAT-->
+                                        <div class="tab-pane fade active show" id="contrat">
+						                    <div class="pt-4">
+                                            <script type="text/javascript">
+                                                                        function aven() {
+                                                                        var myvalu = document.getElementById("typecont").value;
+                                                                        var elements = document.getElementById("avenant");
+                                                                                if (myvalu == 'Avenant') {
+                                                                                    elements.classList.remove('non');
+                                                                                    elements.classList.add('oui');
+                                                                                }
+                                                                                else {
+                                                                                    elements.classList.remove('oui');
+                                                                                    elements.classList.add('non');
+                                                                                }
+                                                                        }
+                                            </script>
+						                    <div id="avenant" class="col-lg-12 non">
+						                        <div class="card">
+						                            
+						                            <div class="card-header"><h4 class="card-title">Avenant</h4></div>
+						                            <div class="card-body">
+						                                <div class="form-validation">
+						                                        <div class="row">
+						                                            <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Type <span class="text-danger">*</span>
+                                                                            </label>
+                                                                            <div class="col-xl-12">
+                                                                            	<select class="dropdown-groups form-select">
+                                                                            			<option>-</option>
+                        						                                        <option>Changement du montant de la franchise</option>
+                        						                                        <option>Modification du risque</option>
+                        						                                        <option>Changement de fractionnement</option>	
+                        						                                        <option>Renouvellement</option>
+                        						                                        <option>Changement de plein</option>
+                        						                                        <option>Changement d'assuré</option>
+                        						                                        <option>Autre</option>					                      
+                        						                            </select>
+                                                                    	</div>
+                                                                	</div>
+                                                                	 <div class="col-lg-3">
+						                                                    <label class="col-lg-12 col-form-label">Numéro de police</label>
+						                                                    <div class="col-lg-12">
+						                                                        <select class="dropdown-groups form-select">
+                                                                            			<option>-</option>
+            	                      
+                        						                            </select>
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-3">
+						                                                    <label class="col-lg-12 col-form-label">Date d’effet de l'avenant</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="text" class="form-control" placeholder="" id="mdate">
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Modèle d'avenant</label>
+                                                                            <div class="col-xl-12">
+                                                                                <select class="multi-select" name="risques[]" multiple="multiple">
+                                                                                            <option value="-">-</option>
+                                                                                            <option value="Affilié 1">Modele 1</option>
+                                                                                            <option value="Affilié 2">Modele 2</option>
+                                                                                            <option value="Affilié 3">Modele 3</option>
+                                                                                            <option value="Affilié 4">Modele 4</option>
+                                                                                </select>
+                                                                            </div>
+                                                                    </div>
+						                                          <div class="col-lg-12">
+                                                                    <label class="col-lg-12 col-form-label">Commentaires</label>
+                                                                  <div class="col-lg-12">
+                                                         <textarea class="form-control" rows="3"></textarea>
+                                                    </div>
+                                            </div>
+						                                        </div>
+						                                  </div>
+						                            </div>
+						                        </div>
+						                    </div>
+						                    <div class="col-lg-12">
+						                        <div class="card">
+						                            <div class="card-header"><h4 class="card-title">Contrat</h4></div>
+						                            <div class="card-body">
+						                                <div class="form-validation">
+						                                        <div class="row">
+						                                        	<div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">Risques</label>
+						                                                    <div class="col-xl-12">
+						                                                        <select class="dropdown-groups form-select">
+                                                                                            <option>Marchandises Transportées</option>
+                                                                                            <option>Corps</option>
+                                                                                            <option>Plaisance</option>  
+                                                                                </select>
+						                                            		</div>
+						                                            </div>
+                                                                    <div class="col-lg-4">
+                                                                            <label class="col-lg-12 col-form-label">Catégorie Principale RO </label>
+                                                                            <div class="col-lg-12">
+                                                                                <select class="dropdown-groups form-select">
+                        						                                    <optgroup label="Marchandises Transportées">
+                        						                                        <option>Facultés Maritimes</option>
+                        						                                        <option>Facultés Aériennes</option>
+                        						                                        <option>Facultés Terrestres</option>
+                        						                                        <option>RC Facultés</option>
+                        						                                    </optgroup>
+                        						                                    <optgroup label="Corps">
+                        						                                        <option>Corps Flotte</option>
+                        						                                        <option>Corps Pêche</option>
+                        						                                        <option>Corps Caboteurs</option>
+                        						                                        <option>Corps P&I</option>
+                        						                                    </optgroup>
+                        						                                    <optgroup label="Plaisance">
+                        						                                        <option>Plaisance Dommages</option>
+                        						                                        <option>Plaisance RC</option>
+                        						                                    </optgroup>
+                        						                                </select>
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4">
+                                                                            <label class="col-lg-12 col-form-label">Participation aux bénéfices</label>
+                                                                            <div class="col-lg-12">
+                                                                                <select id="partben" class="dropdown-groups form-select" onchange="findmyvalue()">
+                                                                                    <option value="non">Non</option>
+                                                                                    <option value="oui">Oui</option>
+                                                                                </select>
+                                                                            </div>
+                                                                    </div>
+                                                                    <script type="text/javascript">
+                                                                        function findmyvalue() {
+                                                                        var myval = document.getElementById("partben").value;
+                                                                        var element = document.getElementById("modalcal");
+                                                                                if (myval == 'oui') {
+                                                                                    element.classList.remove('non');
+                                                                                    element.classList.add('oui');
+                                                                                }
+                                                                                else {
+                                                                                    element.classList.remove('oui');
+                                                                                    element.classList.add('non');
+                                                                                }
+                                                                        }
+                                                                    </script>
+                                                                    <div id="modalcal" class="col-lg-12 non">
+                                                                        <div class="col-lg-12">
+                                                                            <label class="col-lg-12 col-form-label">Modalité de calcul</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="number" class="form-control" placeholder="">
+                                                                            </div>
+                                                                            </div>
+                                                                    </div>
+						                                            <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Type de prime</label>
+                                                                            <div class="col-xl-12">
+                                                                                <select class="dropdown-groups form-select" id="typedeprime" onchange="find3()">
+                                                                                        <option value="forfaitaire">Forfaitaire</option>
+                                                                                        <option value="CA">CA</option>
+                                                                                        <option value="aliment">Aliment</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Catégorie principale de RG</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="text" class="form-control" placeholder="">
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Plein dommages</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="text" class="form-control" placeholder="">
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Plein RC</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="text" class="form-control" placeholder="">
+                                                                            </div>
+                                                                    </div>
+						                                            <div class="col-lg-6">
+						                                                    <label class="col-lg-12 col-form-label">N° de contrat</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="">
+						                                                    </div>
+						                                            </div>
+                                                                    <div class="col-lg-6">
+                                                                            <label class="col-lg-12 col-form-label">Affiliés</label>
+                                                                            <div class="col-xl-12">
+                                                                                <select class="multi-select" name="risques[]" multiple="multiple">
+                                                                                            <option value="-">-</option>
+                                                                                            <option value="Affilié 1">Affilié 1</option>
+                                                                                            <option value="Affilié 2">Affilié 2</option>
+                                                                                            <option value="Affilié 3">Affilié 3</option>
+                                                                                            <option value="Affilié 4">Affilié 4</option>
+                                                                                </select>
+                                                                            </div>
+                                                                    </div>
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">Date d’effet du contrat</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="text" class="form-control" placeholder="" id="mdate">
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">Date d’échéance</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="text" class="form-control" placeholder="" id="mdate">
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">Date de résiliation</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="text" class="form-control" placeholder="" id="mdate">
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-3">
+						                                                    <label class="col-lg-12 col-form-label" style="color:#fff">Tacite Reconduction</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="checkbox"> Tacite Reconduction
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-9">
+						                                                    <label class="col-lg-12 col-form-label">Durée du préavis</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="text" class="form-control" placeholder="">
+						                                                    </div>
+						                                            </div>
+						                                        </div>
+						                                  </div>
+						                            </div>
+						                        </div>
+						                    </div>
+                                            <div class="col-lg-12">
+                                                <div class="card">
+                                                    <div class="card-header"><h4 class="card-title">Apporteur / Courtier</h4></div>
+                                                    <div class="card-body">
+                                                        <div class="form-validation">
+                                                                <div class="row">
+                                                                    <div class="col-lg-6">
+                                                                            <label class="col-lg-12 col-form-label">Apporteurs</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <select class="dropdown-groups form-select" id="apporteurs" onchange="find2()">
+                                                                                            <option value="Choisir">- Choisir -</option>    
+                                                                                            <option>-</option>                                                   
+                                                                                </select>
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-6">
+                                                                            <label class="col-lg-12 col-form-label">Courtiers</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <select class="dropdown-groups form-select">
+                                                                                            <option value="Taffe SA">Taffe SA</option>                                                     
+                                                                                </select>
+                                                                            </div>
+                                                                    </div>
+                                                                    <script type="text/javascript">
+                                                                        function find2() {
+                                                                        var myval = document.getElementById("apporteurs").value;
+                                                                        var element = document.getElementById("modalrem");
+                                                                                if (myval == 'Choisir') {
+                                                                                    element.classList.remove('oui');
+                                                                                    element.classList.add('non');
+                                                                                }
+                                                                                else {
+                                                                                    element.classList.remove('non');
+                                                                                    element.classList.add('oui');
+                                                                                }
+                                                                        }
+                                                                    </script>
+                                                                    <div class="col-lg-12 non" id="modalrem">
+                                                                     <div class="row" style="width: 100%;">
+                                                                    <div class="col-lg-6">
+                                                                            <label class="col-lg-12 col-form-label">Type de rémunération</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <select class="dropdown-groups form-select">
+                                                                                            <option value="Choisir">- Choisir -</option>    
+                                                                                            <option>Co-courtage</option>            
+                                                                                            <option>Extra-prime</option>    
+                                                                                </select>
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Rémunération RO</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="number" class="form-control" placeholder="">
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Rémunération RG</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="number" class="form-control" placeholder="">
+                                                                            </div>
+                                                                    </div>
+                                                                    </div>
+                                                                    </div>
+                                                                </div>
+                                                          </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-12">
+						                        <div class="card">
+						                            <div class="card-header"><h4 class="card-title">Prime</h4></div>
+						                            <div class="card-body">
+						                                <div class="form-validation">
+						                                        <div class="row">
+						                                            <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Choix du paiement</label>
+                                                                            <div class="col-xl-12">
+                                                                                <select class="dropdown-groups form-select">
+                                                                                        <option>Regroupement de Prime (Uniquement TAFFE)</option>
+                                                                                        <option>Génération Ponctuelle (Petite note)</option>
+                                                                                </select>
+                                                                        </div>
+                                                                    </div>
+						                                            <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Devise du contrat</label>
+                                                                            <div class="col-xl-12">
+                                                                                <select class="dropdown-groups form-select">
+                                                                                        <option>Euro</option>
+                                                                                        <option>Dollard</option>
+                                                                                </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Devise de travail</label>
+                                                                            <div class="col-xl-12">
+                                                                                <select class="dropdown-groups form-select">
+                                                                                        <option>Euro</option>
+                                                                                        <option>Dollard</option>
+                                                                                </select>
+                                                                        </div>
+                                                                    </div>
+						                                            <div class="col-lg-3">
+						                                                    <label class="col-lg-12 col-form-label">Fractionnement</label>
+						                                                    <div class="col-xl-12">
+						                                                    	<select class="dropdown-groups form-select">
+						                                                    			<option>-</option>
+												                                        <option>Mensuel</option>
+												                                        <option>Semestriel</option>
+												                                        <option>Trimestriel</option>
+												                                        <option>Annuel</option>			                      
+												                            </select>
+						                                            	</div>
+						                                            </div>
+						                                            <div class="col-lg-12">
+                                                                            <label class="col-lg-12 col-form-label">Frais</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="number" class="form-control" placeholder="">
+                                                                            </div>
+                                                                    </div>
+						                                             <!--DEBUT CACHE-->
+						                                            <div style="display: none">
+						                                        	<div class="col-lg-4">
+						                                            <label class="col-lg-12 col-form-label">Assurance Transports terrestres et aériens</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="">
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">Assurance maritime</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="" >
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">Navire de pêche, commerce</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="">
+						                                            </div>
+						                                            </div>
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">Navire de conchyliculture (100%)</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="">
+						                                            </div>
+						                                            </div>
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">FGTI</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="">
+						                                            </div>
+						                                            </div>
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">Autres</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="">
+						                                            </div>
+						                                            </div>
+						                                        	<div class="col-lg-4">
+						                                            <label class="col-lg-12 col-form-label">Montant de la prime annuelle</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="">
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">Montant des honoraires</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="" >
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">Montant total des taxes</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="">
+						                                            </div>
+						                                            </div>
+						                                                                                                                 <script type="text/javascript">
+                                                                        function find3() {
+                                                                        var myval = document.getElementById("typedeprime").value;
+                                                                        var element = document.getElementById("primeca");
+                                                                                if (myval == 'CA') {
+                                                                                    element.classList.remove('non');
+                                                                                    element.classList.add('oui');
+                                                                                }
+                                                                                else {
+                                                                                    element.classList.remove('oui');
+                                                                                    element.classList.add('non');
+                                                                                }
+                                                                        }
+                                                                    </script>
+                                                                    <div class="col-lg-12 non" id="primeca">
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">CA Prévisionnel (Si CA)</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="" >
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">CA Définitif (Si CA)</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="" >
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-4">
+						                                                    <label class="col-lg-12 col-form-label">Différence % (Si CA)</label>
+						                                                    <div class="col-lg-12">
+						                                                         <input type="number" class="form-control" placeholder="" >
+						                                                    </div>
+						                                            </div>
+						                                            <div class="col-lg-12">
+						                                                    <div class="col-lg-12">
+						                                                        <div class="form-check">
+																				  <input class="form-check-input" type="checkbox" value="">
+																				  <label class="form-check-label">
+																					Validation du client (Si CA)
+																				  </label>
+																				</div>
+						                                                    </div>
+						                                            </div>
+						                                            </div>
+						                                            <!--FIN CACHE-->
+						                                        	</div>
+						                                        </div>
+						                                  </div>
+						                            </div>
+						                        </div>
+						                    </div>
+						                    </div>
+                                        </div>
+<!--FIN CONTRAT-->
+<!--DEBUT ASSUREUR-->
+                                        <div class="tab-pane fade" id="assureurs">
+                                            <div class="pt-4">
+                                            <div class="col-lg-12">
+						                        <div class="card">
+						                            <div class="card-header"><h4 class="card-title">Assureurs</h4></div>
+						                            <div class="card-body">
+						                                <div class="form-validation">
+						                                        <div class="row">
+						                                        	<div class="col-lg-6">
+						                                        		<label class="col-lg-12 col-form-label">Agent Apériteur </label>
+						                                                    <div class="col-lg-12">
+						                                                        <select class="dropdown-groups form-select">
+							                                                    			<option>-</option>
+													                                        <option>Assureur 1</option>
+													                                        <option>Assureur 2</option>
+													                            </select>
+						                                                    </div>
+						                                            </div>
+                                                                    <div class="col-lg-6">
+                                                                        <label class="col-lg-12 col-form-label">Compagnie Apéritrice </label>
+                                                                            <div class="col-lg-12">
+                                                                                <select class="dropdown-groups form-select">
+                                                                                            <option>-</option>
+                                                                                            <option>Assureur 1</option>
+                                                                                            <option>Assureur 2</option>
+                                                                                </select>
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4">
+                                                                            <label class="col-lg-12 col-form-label">N° répartition</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="nymber" class="form-control" readonly>
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4">
+                                                                            <label class="col-lg-12 col-form-label">Date de début répartition</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="text" class="form-control" >
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-4">
+                                                                            <label class="col-lg-12 col-form-label">Date de fin répartition</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="text" class="form-control" >
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Statut optiflux</label>
+                                                                            <div class="col-lg-12">
+                                                                                <select class="dropdown-groups form-select">
+                                                                                            <option>-</option>
+                                                                                            <option>Valide</option>
+                                                                                            <option>Suspens</option>
+                                                                                </select>
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-2">
+                                                                            <label class="col-lg-12 col-form-label">Clé exercice</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="text" class="form-control" value="4">
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-2">
+                                                                            <label class="col-lg-12 col-form-label">Clé bureau</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="text" class="form-control" value="5">
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                            <label class="col-lg-12 col-form-label">Clé police</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="text" class="form-control" value="12">
+                                                                            </div>
+                                                                    </div>
+                                                                    <div class="col-lg-2">
+                                                                            <label class="col-lg-12 col-form-label">Clé compteur</label>
+                                                                            <div class="col-lg-12">
+                                                                                 <input type="text" class="form-control" value="3">
+                                                                            </div>
+                                                                    </div>
+						                                        </div>
+						                                  </div>
+						                            </div>
+						                        </div>
+						                    </div>
+						                    <div class="col-lg-12">
+						                        <div class="card">
+						                            <div class="card-header"><h4 class="card-title">Répartition</h4></div>
+						                            <div class="card-body">
+						                                <div class="form-validation">
+						                                        <div class="row">
+						                                        	<div class="col-12">
+                                                                        <p>Taux de rémunération = Comm. agent + Taux courtage<br>Le total des % compagnies doit être obligatoirement égal à 100% sinon impossible de valider.<br>
+                                                                        Ajouter Agent Apériteur et Compagnie Apéritrice en premier dans le tableau</p>
+									                                <table id="zero-conf" class="display parent-div" style="width:100%">
+									                                    <thead>
+									                                        <tr>
+									                                            <th class="color1">Agent</th>
+									                                            <th class="color1">Part (%)</th>
+									                                            <th class="color2">Compagnie</th>
+									                                            <th class="color2">Part (%)</th>
+									                                            <th class="color2">Taux Rémun. (%)</th>
+									                                            <th class="color3">Com Agent (%)</th>
+									                                            <th class="color3">Taux Courtage (%)</th>
+									                                            <th style="width:5%"></th>
+									                                        </tr>
+									                                    </thead>
+									                                    <tbody>
+									                                        <tr id="copy-this-div">
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="number" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="number" class="form-control" value=""></td>
+									                                            <td><input type="number" class="form-control" value=""></td>
+									                                            <td><input type="number" class="form-control" value=""></td>
+									                                            <td><input type="number" class="form-control" value=""></td>
+									                                            <td class="centrer"><a href="#"><i class="bi bi-trash2"></i></a></td>
+									                                        </tr>
+									                                    </tbody>
+									                                </table>
+                                                                        <button style="padding: 4px;margin-top: 15px;" type="button" class="btn btn-success add-btn">Ajouter une ligne</button>
+									                               </div>
+						                                        </div>
+						                                  </div>
+						                            </div>
+						                        </div>
+						                    </div>
+                                            
+                                            </div>
+                                        </div>
+<!--FIN ASSUREUR-->
+<!--DEBUT FLOTTE -->
+                                        <div class="tab-pane fade" id="flotte">
+                                            <div class="pt-4">
+                                                <div class="col-lg-12">
+						                        <div class="card">
+						                            <div class="card-header"><h4 class="card-title">Flotte</h4></div>
+						                            <div class="card-body">
+                                                        <div class="row">
+                                                        <div class="col-lg-6">
+                                                            <label class="col-lg-12 col-form-label">Prime totale </label>
+                                                            <div class="col-lg-12">
+                                                                <input type="number" class="form-control" placeholder="" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-6">
+                                                            <label class="col-lg-12 col-form-label">Nombre de navires</label>
+                                                            <div class="col-lg-12">
+                                                                <input type="number" class="form-control" placeholder="" readonly>
+                                                            </div>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+						                            <div class="card-body">
+						                                <div class="form-validation">
+						                                        <div class="row">
+						                                        	<div class="col-12">
+									                                <table id="zero-conf" class="display" style="width:100%">
+									                                    <thead>
+									                                        <tr>
+									                                            <th>Nom du navire</th>
+									                                            <th>Propriétaire</th>
+									                                            <th>Type</th>
+									                                            <th>Garantie</th>
+									                                            <th>Année</th>
+									                                            <th>Pavillon</th>
+									                                            <th>Montant Capital</th>
+									                                            <th>Effet</th>
+									                                            <th>Prime Annuelle</th>
+									                                            <th>Franchise</th>
+									                                            <th>GT</th>
+									                                            <th>TJB</th>
+                                                                                <th>Longueur</th>
+                                                                                <th>Date sortie</th>
+									                                            <th style="width:5%"></th>
+									                                            <th style="width:5%"></th>
+									                                        </tr>
+									                                    </thead>
+									                                    <tbody class="col-lg-12 parent-divdeux">
+									                                        <tr id="copy-this-divdeux">
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td><input type="text" class="form-control" value=""></td>
+									                                            <td class="centrer"><a href="#"><i class="bi bi-trash2"></i></a></td>
+									                                            <td class="centrer"><a href="#"><i class="bi bi-eye"></i></a></td>
+									                                        </tr>
+									                                    </tbody>
+									                                </table>
+                                                                     <button style="padding: 4px;margin-top: 15px;display: block;width: 300px;margin: 10px auto;" type="button" class="btn btn-success add-btndeux">Ajouter une ligne</button>
+                                                                        <script>
+                                                                        $('body').on("click", '.add-btndeux', function() {
+                                                                        var copyContent = $("#copy-this-divdeux").clone();
+                                                                        $('.parent-divdeux').append(copyContent);
+                                                                        });
+                                                                        </script>
+									                                </div>
+						                                        </div>
+						                                  </div>
+						                            </div>
+						                        </div>
+						                        </div>
+<!--FIN FLOTTE -->
+
+
+                                        </div>
+                                        </div>
+<!--DEBUT SIGNATURE -->
+                                        <div class="tab-pane fade" id="signature">
+                                            <div class="pt-4">
+                                            	<div class="card-body">
+						                                        <div class="row">
+						                                            <div class="col-lg-3">
+						                                            	<a href="#" class="telechargement"><i class="bi bi-file-earmark-pdf"></i> Contrat Signé </a>
+						                                            </div>
+						                                            <div class="col-lg-3">
+						                                            	<a href="#" class="telechargement"><i class="bi bi-file-earmark-pdf"></i> CG </a>
+						                                            </div>
+						                                            <div class="col-lg-3">
+						                                            	<a href="#" class="telechargement"><i class="bi bi-file-earmark-pdf"></i> IPID </a>
+						                                            </div>
+						                                            <div class="col-lg-3">
+						                                            	<a href="#" class="telechargement"><i class="bi bi-file-earmark-pdf"></i> FC </a>
+						                                            </div>
+						                                            <div class="col-lg-3">
+						                                            	<a href="#" class="telechargement"><i class="bi bi-file-earmark-pdf"></i> CP </a>
+						                                            </div>
+						                                        </div>
+						                         </div>
+                                            </div>
+                                        </div>
+<!--FIN SIGNATURE -->
+<!--DEBUT PUBLI -->
+                                        <div class="tab-pane fade" id="publipostage">
+                                            <div class="pt-4">
+                                                <div class="card-body">
+                                                                <div class="row">
+                                                                    <div class="col-lg-3">
+                                                                        <a href="#" class="telechargement"><i class="bi bi-file-earmark-word"></i> Publipostage 1 </a>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                        <a href="#" class="telechargement"><i class="bi bi-file-earmark-word"></i> Publipostage 2 </a>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                        <a href="#" class="telechargement"><i class="bi bi-file-earmark-word"></i> Publipostage 3 </a>
+                                                                    </div>
+                                                                    <div class="col-lg-3">
+                                                                        <a href="#" class="telechargement"><i class="bi bi-file-earmark-word"></i> Publipostage 4 </a>
+                                                                    </div>
+                                                                </div>
+                                                 </div>
+                                            </div>
+                                        </div>
+<!--FIN PUBLI -->
+<!--DEBUT AVENANTS -->
+                                        <div class="tab-pane fade" id="avenants">
+                                            <div class="pt-4">
+                                                <div class="card-body">
+                                                    <div class="row">
+                                					<div class="col-12">
+                                						<div class="card">
+						                                    <div class="card-header"><h4 class="card-title">Avenants</h4></div>
+                                							<div class="card-body">
+                                                                <div class="table-responsive" style="min-height: 400px;">
+                                                                    <table id="taffe" class="display" style="width: 100%;">
+                                                                        <thead>
+                                                                            <tr>
+                                                                            	<th style="width: 10%;">#</th>
+                                                                            	<th style="width: 10%;">Date</th>
+                                                                                <th>Objet</th>
+                                                                                <th style="width: 5%;"></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                            	<td><strong>123</strong></td>
+                                                                            	<td>10/10/2020</td>
+                                                                            	<td>Changement du montant de la franchise</td>
+                                                                                 <td>
+                                													<div class="dropdown ms-auto text-end">
+                                														<div class="btn-link" data-bs-toggle="dropdown">
+                                															<i class="bi bi-three-dots-vertical"></i>
+                                														</div>
+                                														<div class="dropdown-menu dropdown-menu-end modifligne">
+                                															<a class="dropdown-item" href="../assures/assure-unique.html"><i class="bi bi-eye"></i>Voir</a>
+                                															<a class="dropdown-item" href="#"><i class="bi bi-file-pdf-fill"></i>Avenant PDF</a>
+                                														</div>
+                                													</div>
+                                												</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                						</div>
+                                					</div>
+                                				</div>
+                                                 </div>
+                                            </div>
+                                        </div>
+<!--FIN AVENANTS -->
+                                    </div>
+                                </div>
+                    </div>
+                    <div class="col-lg-12">
+						    <label class="col-lg-12 col-form-label">Commentaires</label>
+						    <div class="col-lg-12">
+						        <textarea class="form-control" rows="6"></textarea>
+						    </div>
+					</div>
+                        <div class="col-lg-12 ms-auto">
+					       <button type="submit" class="btn btn-primary valider">Valider</button>
+				        </div>
+				</div>
+            </form>
+            </div>
+            
+			
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+		
+		
+		
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+		
+            <div class="copyright">
+                <p>Copyright 2021 © Revolucy</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+		
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+	</div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="../template/vendor/global/global.min.js"></script>
+    <script src="../template/vendor/chart.js/Chart.bundle.min.js"></script>
+	<script src="../template/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+
+
+	
+	<!-- Chart piety plugin files -->
+    <script src="../template/vendor/peity/jquery.peity.min.js"></script>
+	
+	<!-- Dashboard 1 -->
+	<script src="../template/vendor/select2/js/select2.full.min.js"></script>
+    <script src="../template/js/plugins-init/select2-init.js"></script>
+    <script src="../template/js/custom.min.js"></script>
+	<script src="../template/js/deznav-init.js"></script>
+
+	<!-- Datatable -->
+    <script src="../template/vendor/datatables/js/jquery.dataTables.min.js"></script>
+    <script src="../template/js/plugins-init/datatables.init.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.0/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.0/js/buttons.print.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.0.1/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/colreorder/1.5.4/js/dataTables.colReorder.min.js"></script>
+
+    
+</body>
+</html>

@@ -1,0 +1,271 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%  block content %}
+
+		<!--**********************************
+            Content body start
+        ***********************************-->
+
+    <div class="content-body">
+            <!-- row -->
+            <div class="row page-titles">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item active"><a href="#">Apporteur</a></li>
+						<li class="breadcrumb-item"><a href="#">Nouvel apporteur</a></li>
+					</ol>
+            </div>
+			<div class="container-fluid">
+			<div class="row btnadd">
+				<div class="col-lg-2"><a href="../assures/assure-nouveau.html"><i class="bi bi-person"></i> Assuré</a></div>
+				<div class="col-lg-2"><a href="../assures/assure-nouveau.html"><i class="bi bi-people"></i> Affilié</a></div>
+				<div class="col-lg-2"><a href="../assureurs/assureur-nouveau.html"><i class="bi bi-shop"></i> Compagnie</a></div>
+				<div class="col-lg-2"><a href="../courtiers/courtier-nouveau.html"><i class="bi bi-file-person"></i> Courtier</a></div>
+				<div class="col-lg-2 active"><a href="../apporteurs/apporteur-nouveau.html"><i class="bi bi-building"></i> Apporteur</a></div>
+				<div class="col-lg-2"><a href="#"><i class="bi bi-person-circle"></i> Autre</a></div>
+			</div>
+			<form class="needs-validation" novalidate="">
+                {{ form }}
+				<div class="row">
+                    <div class="col-lg-12">
+                        <div class="card">
+							<div class="card-header"><h4 class="card-title">Apporteur</h4></div>
+                            <div class="card-body">
+                                <div class="form-validation">
+                                    <form class="needs-validation" novalidate="">
+                                        <div class="row">
+                                        	<div class="col-lg-12">
+												<label for="{{ form.Image.id_for_label }}" class="col-lg-12 col-form-label">Image de profil</label>
+	                                            <div class="col-lg-12">
+	                                                <input id="{{ form.Image.id_for_label }}"  type="file" class="form-file-input form-control" style="padding: 10px 16px;">
+	                                            </div>
+	                                        </div>
+
+	                                        <div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Forme sociale</label>
+                                                    <div class="col-lg-12">
+						                                <select class="dropdown-groups form-select">
+						                                    <option value="SAS">SAS</option>
+						                                    <option value="SARL">SARL</option>
+						                                </select>
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-5">
+                                                    <label class="col-lg-12 col-form-label">Dénomination sociale<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">SIREN<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="number" class="form-control" placeholder="" required="">
+                                                    </div>
+                                            </div>
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Adresse 1</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Adresse 2</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Adresse 3</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Code postal<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Ville<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label" for="validationCustom01">Pays<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+														<select class="dropdown-groups form-select">
+						                                    <optgroup label="Europe">
+						                                        <option>France</option>
+						                                        <option>Monaco</option>
+						                                        <option>Suisse</option>
+						                                    </optgroup>
+						                                    <optgroup label="Autre">
+						                                        <option>option 1</option>
+						                                        <option>option 2</option>
+						                                        <option>option 3</option>
+						                                    </optgroup>
+						                                </select>
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                    <label class="col-lg-12 col-form-label">E-Mail<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-6">
+                                                    <label class="col-lg-12 col-form-label">Mot de passe<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="password" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-12">
+												<label class="col-lg-12 col-form-label">Convention d'apporteur</label>
+	                                            <div class="col-lg-12">
+	                                                <input type="file" class="form-file-input form-control" style="padding: 10px 16px;">
+	                                            </div>
+	                                        </div>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card">
+							<div class="card-header"><h4 class="card-title">Rémunération</h4></div>
+                            <div class="card-body">
+                                <div class="form-validation">
+                                    
+                                        <div class="row">
+                                        	<div class="col-lg-6">
+                                                    <label class="col-lg-12 col-form-label">Type de rémunération (En %)</label>
+                                                    <div class="col-lg-12">
+						                                <select id="typerem" class="dropdown-groups form-select" onchange="findmyvalue()">
+						                                	<option value="">Choisir le type de rémunération</option>
+						                                    <option value="cocourtage">Co-courtage</option>
+						                                    <option value="extraprime">Extra-prime</option>
+						                                </select>
+                                                    </div>
+                                        	</div>
+		                                    <script type="text/javascript">
+											function findmyvalue() {
+											var myval = document.getElementById("typerem").value;
+											var element = document.getElementById("tauxrem");
+											 		if (myval == 'cocourtage') {
+														element.classList.remove('extraprime');
+														element.classList.add('cocourtage');
+													} else if (myval == 'extraprime') {
+														element.classList.remove('cocourtage');
+														element.classList.add('extraprime');
+													}
+													else {
+														element.classList.remove('cocourtage');
+														element.classList.remove('extraprime');
+													}
+											}
+											</script>
+											<div id="tauxrem" class="col-lg-6">
+                                        	<div class="col-lg-12 cocourtage">
+                                                    <label class="col-lg-12 col-form-label">Taux Co-courtage</label>
+                                                    <div class="col-lg-12">
+						                                  <input type="number" class="form-control" placeholder="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-12 extraprime">
+                                                    <label class="col-lg-12 col-form-label">Extraprime</label>
+                                                    <div class="col-lg-12">
+						                                 <input type="number" class="form-control" placeholder="">
+                                                    </div>
+                                        	</div>
+                                        	</div>
+                                        </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 parent-div">
+                        <div class="card" id="copy-this-div">
+							<div class="card-header"><h4 class="card-title">Interlocuteur</h4></div>
+                            <div class="card-body">
+                                <div class="form-validation">
+                                    
+                                        <div class="row">
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Service</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Fonction</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                        	</div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Nom de l’interlocuteur<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Prénom de l’interlocuteur<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+   
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Email<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Tél mobile<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Tél fixe</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+				            <button type="button" class="btn btn-success add-btn">Ajouter un interlocuteur</button>
+				    </div>
+                    <div class="col-lg-12">
+                                         <div class="col-lg-12 ms-auto">
+                                            <button type="submit" class="btn btn-primary valider">Valider</button>
+                                         </div>
+                    </div>
+				</div>
+			</form>
+            </div>
+			
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+		
+{% endblock %}

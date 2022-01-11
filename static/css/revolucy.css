@@ -1,0 +1,269 @@
+/* CSS REVOLUCY */
+#tauxrem > div, div.non, li.non {display: none;}
+ul li.oui {display: inherit;}
+#tauxrem.cocourtage .cocourtage, #tauxrem.extraprime .extraprime, div div.oui {display: inherit;}
+.col-lg-12.oui > div.col-lg-4 {
+    display: inline-block;
+    padding: 0 1%;
+    max-width: 33%;
+}
+.nav-header a.brand-logo {padding-left: 20px;padding-right: 90px;}
+div.nav-header, div.header {height: 90px;}
+div.nav-header {width: 300px;}
+div.deznav {height: calc(100% - 90px);top: 90px;width: 300px;}
+img.logo-abbr {padding: 0 15px;}
+[data-header-position="fixed"] div.content-body {padding-top: 90px;}
+div h2, div .h2 {font-size: 25px;}
+.deznav .metismenu > li {padding: 0 10px !important;}
+body .deznav .metismenu ul a {
+    padding-left: 20px;
+    margin-left: 25px;
+    line-height: 14px;
+    color: #fff !important;
+    padding-right: 10px;
+}body .deznav .metismenu ul a:hover {color: #1a545e !important;font-weight: bold;}
+body .deznav .metismenu ul a::before {top: 9px;content: "⚬";left: 0;}
+.deznav .metismenu > li > a {padding: 10px 15px !important}
+img.icontop {max-width: 30px;}
+.contacts div.user_info {width: 100%;}
+.contacts span.badge {
+    color: #fff;
+    font-size: 12px;
+    display: inline;
+    padding: 2px 10px;
+}
+.tablehisto.display th, .tablehisto.display td {
+    font-size: 14px;
+}
+.col-12 > #taffe_wrapper {overflow: scroll;}
+tr.filters > th > input {
+    font-size: 12px;
+    width: 100%;
+    padding: 4px 8px !important;
+    display: block;
+}
+#taffe_info {
+    font-size: 12px;
+}
+tr.filters > th {
+    padding: 2px !important;
+}
+div.dt-button-collection {
+    margin-top: 10px !important;
+}
+div.chatbox .nav {
+    padding: 0;
+}
+.dt-button-collection button {
+    border: 1px solid #c5c5c5;
+    padding: 2px 10px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-size: 13px;
+    border-radius: 13px;
+}
+.dt-button.buttons-columnVisibility.active {
+    background: #ceeef2;
+}
+td.center {
+    text-align: center;
+}
+.btnadd a {
+    width: 100%;
+    background: #1fc8e3;
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.btnadd .active a {
+    background: #1fe37e;
+}
+#taffe_previous {
+    font-size: 0;
+    background-image: url(https://cdn-icons-png.flaticon.com/512/271/271220.png);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#taffe_next {
+    font-size: 0;
+    background-image: url(https://cdn-icons-png.flaticon.com/512/271/271228.png);
+    background-size: 40%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+div#typeclient > div {
+    display: none;
+}
+div#typeclient.morale .persomorale, div#typeclient.affilie .persomorale, div#typeclient.affilie .persoaffilie, div#typeclient.physique .persophysique  {
+    display: unset;
+}
+.tableintegre #example_length, .tableintegre #example_filter, .tableintegre #example_info {display: none}
+.tableintegre #example_paginate {
+    text-align: center;
+    display: block;
+    border: none;
+}
+div.dt-buttons > button {
+    border: none;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background: #eaeaea;
+}
+div.dt-buttons {
+    float: left;
+}
+div.dt-buttons > button:hover {
+    background: #1fc8e3;
+    color:#fff;
+}
+.bandeautable .bi {font-size: 33px;}
+.copyright p {color: #17a2b866;}
+ul#menu {padding-bottom: 30px;}
+.chatbox .contacts .user_info p {line-height: 2;overflow: visible; max-width: 100%;}
+body .deznav .metismenu ul a.plus::before {content: "+";}
+ul hr {
+    margin: 7px 24px;
+    color: #fff;
+    height: 2px !important;
+    opacity: 0.5;
+}
+table.tableret th, table.tableret td {
+    padding: 5px 10px;
+}
+button.btn.btn-success.add-btn {
+    margin: auto;
+        margin-bottom: auto;
+    display: block;
+    margin-bottom: 30px;
+    min-width: 300px;
+}
+a#addRow {
+    padding: 4px;
+}
+a.telechargement {
+    padding: 5px;
+    display: block;
+    font-size: 20px;
+}
+a.telechargement i {
+    font-size: 35px;
+}
+#zero-conf input {
+    padding: 5px;
+}
+th.color1 {
+    background: #c0f9dc;
+}
+th.color2 {
+    background: #8adeff;
+}
+#zero-conf th {
+    padding: 9px 9px;
+    font-size: 13px;
+}
+#zero-conf .form-control {
+    border-top: none;
+    border-left: none;
+    border-radius: 0;
+    border-right: 0;
+}
+.profile-header .profile-header-menu ul li {
+    float: right;
+    height: 100%;
+    padding: 15px;
+}
+textarea.form-control {
+    height: auto;
+}
+table.dataTable tbody tr.red {
+    background: #ffcece !important;
+}
+.col-lg-12 div.card-body {
+    padding-top: 10px;
+}
+.col-lg-6 div.card-body {
+    padding-bottom: 0px;
+}
+.tablehisto tr {
+    border-bottom: 1px solid #d9d9d9;
+}
+.profile-header .profile-header-menu ul li i {margin-right: 10px}
+label.col-form-label {
+    padding-bottom: 0px;
+    padding-top: 10px;
+}
+div .select2-container--default .select2-selection--single {
+    border-radius: 10px;
+    border: 2px solid #d9d9d9;
+    height: 36px;
+    background: #fff;
+}
+.tablehisto tr > td, .tablehisto tr > th {
+    padding: 5px 10px;
+}
+.iconmod i {
+    margin: 0 5px;
+    font-size: 20px;
+}
+.form-control, .form-select {
+    border: 2px solid #d9d9d9;
+}
+.centrer {text-align: center;}
+div.Generate a {
+    color: #fff;
+    padding: 10px 10px;
+    margin-top: 18px;
+}
+div.dataTables_wrapper .dataTables_paginate .paginate_button.previous,
+div.dataTables_wrapper .dataTables_paginate .paginate_button.next,
+div.dataTables_wrapper .dataTables_paginate span .paginate_button {
+    height: 35px;
+    width: 35px;
+    line-height: 35px;
+}
+div.dataTables_wrapper .dataTables_paginate .paginate_button.previous i, 
+div.dataTables_wrapper .dataTables_paginate .paginate_button.next i {
+    font-size: 16px;
+}
+thead {
+    background: #ceeef2;
+}
+div table.dataTable thead th {
+    font-size: 13px;
+    padding: 10px 12px;
+}
+div table.dataTable tbody td {
+    padding: 10px 10px;
+}
+.modifligne .dropdown-item {
+    padding: 5px 20px;
+    font-size: 15px;
+}
+.modifligne .dropdown-item i {margin-right: 9px;}
+.btn.valider {
+    width: 100%;
+    margin-top: 20px;
+    padding: 7px;
+}
+@media (max-width: 700px) {
+div.nav-header {
+    width: 300px;
+    max-width: 35%;
+}
+img.logo-abbr {
+    width: 100% !important;
+    height: auto !important;
+}
+.header-left {
+    display: none;
+}
+.navbar-nav.header-right {
+    margin-left: 45px;
+}
+}

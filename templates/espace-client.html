@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="ERP TAFFE - Tableau de bord" />
+	<meta property="og:title" content="ERP TAFFE - Tableau de bord" />
+	<meta property="og:description" content="ERP TAFFE - Tableau de bord" />
+	<meta property="og:image" content=""/>
+	<meta name="format-detection" content="telephone=no">
+	
+	<!-- PAGE TITLE HERE -->
+	<title>ERP TAFFE - Espace Client</title>
+	
+	<!-- FAVICONS ICON -->
+	<link rel="shortcut icon" type="image/png" href="./template/images/favicon.png" />
+	<link rel="stylesheet" href="./template/vendor/chartist/css/chartist.min.css">
+	<link href="./template/vendor/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+	<link href="./template/vendor/jquery-nice-select/css/nice-select.css" rel="stylesheet">
+	<!-- Style css -->
+    <link href="./template/css/style.css" rel="stylesheet">
+	<link href="./template/css/revolucy.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<body>
+
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--dot"></div>
+            <div class="loader--text"></div>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    <!--**********************************
+        Main wrapper start
+    ***********************************-->
+    <div id="main-wrapper">
+
+        <!--**********************************
+            Nav header start
+        ***********************************-->
+        <div class="nav-header">
+            <a href="index.html" class="brand-logo">
+               <img class="logo-abbr" src="./template/images/logo-gruvel.png" alt="Logo">
+            </a>
+            <div class="nav-control">
+                <div class="hamburger">
+                    <span class="line"></span><span class="line"></span><span class="line"></span>
+                </div>
+            </div>
+        </div>
+        <!--**********************************
+            Nav header end
+        ***********************************-->
+		
+		<!--**********************************
+            Header start
+        ***********************************-->
+        <div class="header">
+            <div class="header-content">
+                <nav class="navbar navbar-expand">
+                    <div class="collapse navbar-collapse justify-content-between">
+                        <div class="header-left">
+						<h2 class="font-w600 mb-0">Tableau de bord</h2>
+						</div>
+                        <ul class="navbar-nav header-right">
+                            <li class="nav-item dropdown notification_dropdown">
+                                <a href="#" style="color: #17a2b8;font-weight: 500;">
+                                   <img class="rounded-circle" style="margin-right: 10px;" width="40" src="./template/images/profile-image.png" alt="img"> Maxence Petit
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+				</nav>
+			</div>
+		</div>
+        <!--**********************************
+            Header end ti-comment-alt
+        ***********************************-->
+
+        <!--**********************************
+            Sidebar start
+        ***********************************-->
+        <div class="deznav">
+            <div class="deznav-scroll">
+				<ul class="metismenu" id="menu">
+					
+                    <li><a class="ai-icon" href="./espace-client.html" aria-expanded="false">
+							<i class="bi bi-app-indicator"></i>
+							<span class="nav-text">Tableau de bord</span>
+						</a>
+                    </li>
+                     <li><a class="ai-icon" href="./espace-client/mon-compte.html" aria-expanded="false">
+						<i class="bi bi-people"></i>
+							<span class="nav-text">Mon Compte</span>
+						</a>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-file-text"></i>
+							<span class="nav-text">Contrats</span>
+						</a>
+                        <ul aria-expanded="false">
+                            <li><a href="./espace-client/contrat.html">Mes Contrats</a></li>
+                            <li><a href="./espace-client/avenant.html">Mes Avenants</a></li>
+                            
+                        </ul>
+                    </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-receipt-cutoff"></i>
+							<span class="nav-text">Quittances</span>
+						</a>
+						<ul aria-expanded="false">
+                            <li><a href="./espace-client/quittance.html">Mes Quittances</a></li>
+                            <li><a href="./espace-client/paiement.html">Mes Paiements</a></li>
+                        </ul>
+                    </li>
+                    <li><a class="ai-icon" href="./espace-client/sinistre.html" aria-expanded="false">
+						<i class="bi bi-life-preserver"></i>
+							<span class="nav-text">Sinistres</span>
+						</a>
+                    </li>
+                    <li><a class="ai-icon" href="./espace-client/reclamation.html" aria-expanded="false">
+						<i class="bi bi-bezier2"></i>
+							<span class="nav-text">Réclamations</span>
+						</a>
+                    </li>
+                </ul>
+			</div>
+        </div>
+        <!--**********************************
+            Sidebar end
+        ***********************************-->
+		
+		<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- row -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xl-12">
+						<div class="row">
+							<div class="col-xl-3 col-xxl-6 col-sm-6 ">
+								<div class="widget-stat card bg-primary">
+							<div class="card-body p-4">
+								<div class="media">
+									<span class="me-3">
+										<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+										  <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+										</svg>
+									</span>
+									<div class="media-body text-white text-end">
+										<p class="mb-1">Clients</p>
+										<h3 class="text-white">650</h3>
+									</div>
+								</div>
+							</div>
+						</div>
+							</div>
+                            <div class="col-xl-3 col-xxl-6 col-sm-6 ">
+								<div class="widget-stat card">
+							<div class="card-body p-4">
+								<div class="media ai-icon">
+									<span class="me-3 bgl-success text-success">
+										<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+										  <path d="M8 .95 14.61 4h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.379l.5 2A.5.5 0 0 1 15.5 17H.5a.5.5 0 0 1-.485-.621l.5-2A.5.5 0 0 1 1 14V7H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 4h.89L8 .95zM3.776 4h8.447L8 2.05 3.776 4zM2 7v7h1V7H2zm2 0v7h2.5V7H4zm3.5 0v7h1V7h-1zm2 0v7H12V7H9.5zM13 7v7h1V7h-1zm2-1V5H1v1h14zm-.39 9H1.39l-.25 1h13.72l-.25-1z"/>
+										</svg>
+									</span>
+									<div class="media-body">
+										<p class="mb-1">CA 2021</p>
+										<h4 class="mb-0">364'000 €</h4>
+										<span class="badge badge-success">+3.5%</span>
+									</div>
+								</div>
+							</div>
+						</div>
+							</div>
+                            <div class="col-xl-3 col-xxl-6 col-sm-6 ">
+								<div class="widget-stat card">
+							<div class="card-body p-4">
+								<div class="media ai-icon">
+									<span class="me-3 bgl-primary text-primary">
+										<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-file-earmark-check" viewBox="0 0 16 16">
+										  <path d="M10.854 7.854a.5.5 0 0 0-.708-.708L7.5 9.793 6.354 8.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z"/>
+										  <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
+										</svg>
+									</span>
+									<div class="media-body">
+										<p class="mb-1">Contrats</p>
+										<h4 class="mb-0">652</h4>
+										<span class="badge badge-primary">+3.5%</span>
+									</div>
+								</div>
+							</div>
+						</div>
+							</div>
+							<div class="col-xl-3 col-xxl-6 col-sm-6 ">
+								<div class="widget-stat card">
+							<div class="card-body  p-4">
+								<div class="media ai-icon">
+									<span class="me-3 bgl-danger text-danger">
+										<svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-life-preserver" viewBox="0 0 16 16">
+										  <path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm6.43-5.228a7.025 7.025 0 0 1-3.658 3.658l-1.115-2.788a4.015 4.015 0 0 0 1.985-1.985l2.788 1.115zM5.228 14.43a7.025 7.025 0 0 1-3.658-3.658l2.788-1.115a4.015 4.015 0 0 0 1.985 1.985L5.228 14.43zm9.202-9.202-2.788 1.115a4.015 4.015 0 0 0-1.985-1.985l1.115-2.788a7.025 7.025 0 0 1 3.658 3.658zm-8.087-.87a4.015 4.015 0 0 0-1.985 1.985L1.57 5.228A7.025 7.025 0 0 1 5.228 1.57l1.115 2.788zM8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+										</svg>
+									</span>
+									<div class="media-body">
+										<p class="mb-1">Sinistres</p>
+										<h4 class="mb-0">364</h4>
+										<span class="badge badge-danger">+3.5%</span>
+									</div>
+								</div>
+							</div>
+						</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-12">
+                        <div class="row">
+							<div class="col-xl-6">
+								<div class="card bg-primary">
+									<div class="card-body">
+										<div class="d-sm-flex d-block pb-sm-3 align-items-end mb-2">
+											<div class="me-auto pe-3 mb-3 mb-sm-0">
+												<h2 class="chart-num-2 text-white mb-0">200<span class="fs-18 me-2 ms-3">Devis en attente</span></h2>
+											</div>
+										</div>
+										<div class="progress style-1" style="height:15px;">
+											<div class="progress-bar bg-white progress-animated" style="width: 55%; height:15px;" role="progressbar">
+												<span class="sr-only">55%</span>
+												<span class="bg-white arrow"></span>
+												<span class="font-w600 counter-bx text-black"><strong class="counter font-w400">110 signés</strong></span>
+											</div>
+										</div>
+									</div>
+								</div>
+                                </div>
+                                <div class="col-xl-6">
+                                <div class="card bg-warning">
+									<div class="card-body">
+										<div class="d-sm-flex d-block pb-sm-3 align-items-end mb-2">
+											<div class="me-auto pe-3 mb-3 mb-sm-0">
+												<h2 class="chart-num-2 text-white mb-0">10<span class="fs-18 me-2 ms-3">sinistres en cours</span></h2>
+											</div>
+										</div>
+										<div class="progress style-1" style="height:15px;">
+											<div class="progress-bar bg-white progress-animated" style="width: 90%; height:15px;" role="progressbar">
+												<span class="sr-only">90%</span>
+												<span class="bg-white arrow"></span>
+												<span class="font-w600 counter-bx text-black"><strong class="counter font-w400">100 sinistres terminés </strong></span>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="row">
+							<div class="col-xl-6 col-xxl-12">
+								<div class="card latest-sales-bx">
+									<div class="card-header border-0 mb-0">
+										<h4 class="fs-20">Dernières actions</h4>
+									</div>
+									<div class="card-body">
+                                <div id="DZ_W_TimeLine" class="widget-timeline dz-scroll height370 ps ps--active-y">
+                                    <ul class="timeline">
+                                        <li>
+                                            <div class="timeline-badge primary"></div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>30/06/21 - 10h00</span>
+                                                <h6 class="mb-0">Paiement de la quittance <strong class="text-primary">#250 (500€)</strong> par <strong class="text-primary">Societe A </strong>.</h6>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge info">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>30/06/21 - 10h00</span>
+                                                <h6 class="mb-0">Nouveau devis créé pour <strong class="text-info">Societe B</strong></h6>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge danger">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>30/06/21 - 10h00</span>
+                                                <h6 class="mb-0">Nouveau sinistre créé pour <strong class="text-warning">Societe B</strong> - Contrat <strong class="text-warning">#2050</strong></h6>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge success">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>30/06/21 - 10h00</span>
+                                                <h6 class="mb-0">Nouvel utilisateur créé : <strong class="text-success">M Dupond George - Societe B</strong></h6>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <div class="timeline-badge info">
+                                            </div>
+                                            <a class="timeline-panel text-muted" href="#">
+                                                <span>30/06/21 - 10h00</span>
+                                                <h6 class="mb-0">Devis signé  <strong class="text-info">#125</strong> pour <strong class="text-info">Societe B</strong></h6>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                <div class="ps__rail-x" style="left: 0px; bottom: 0px;"><div class="ps__thumb-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps__rail-y" style="top: 0px; height: 370px; right: 0px;"><div class="ps__thumb-y" tabindex="0" style="top: 0px; height: 229px;"></div></div></div>
+                            </div>
+								</div>
+							</div>
+							<div class="col-xl-6 col-xxl-12">
+								<div class="card">
+									<div class="card-header border-0 flex-wrap pb-0">
+										<h4 class="fs-20 font-w500 text-black">CA </h4>
+										<div class="card-action coin-tabs">
+											<ul class="nav nav-tabs" role="tablist">
+												<li class="nav-item">
+													<a class="nav-link active" data-bs-toggle="tab" href="#Monthly1">
+														Mensuel
+													</a>
+												</li>
+												<li class="nav-item">
+													<a class="nav-link " data-bs-toggle="tab" href="#Daily1">
+														Annuel
+													</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<div class="card-body pb-2">
+										<div class="tab-content">
+											<div class="tab-pane fade active show" id="Monthly1">	
+												<div id="salesChart" class="chart-primary"></div>
+											</div>
+
+											<div class="tab-pane fade" id="Daily1">
+												<div id="salesChart2" class="chart-primary"></div>
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+            </div>
+			
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+		
+		
+		
+        <!--**********************************
+            Footer start
+        ***********************************-->
+        <div class="footer">
+		
+            <div class="copyright">
+                <p>Copyright 2021 © Revolucy</p>
+            </div>
+        </div>
+        <!--**********************************
+            Footer end
+        ***********************************-->
+
+		<!--**********************************
+           Support ticket button start
+        ***********************************-->
+		
+        <!--**********************************
+           Support ticket button end
+        ***********************************-->
+
+
+	</div>
+    <!--**********************************
+        Main wrapper end
+    ***********************************-->
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <!-- Required vendors -->
+    <script src="./template/vendor/global/global.min.js"></script>
+	<script src="./template/vendor/chart.js/Chart.bundle.min.js"></script>
+	<script src="./template/vendor/bootstrap-datetimepicker/js/moment.js"></script>
+
+	<script src="./template/vendor/jquery-nice-select/js/jquery.nice-select.min.js"></script>
+	
+	<!-- Chart piety plugin files -->
+    <script src="./template/vendor/peity/jquery.peity.min.js"></script>
+	
+	<!-- Apex Chart -->
+	<script src="./template/vendor/apexchart/apexchart.js"></script>
+	
+	<!-- Dashboard 1 -->
+	<script src="./template/js/dashboard/dashboard-1.js"></script>
+
+    <script src="./template/js/custom.min.js"></script>
+	<script src="./template/js/deznav-init.js"></script>
+	
+    
+</body>
+</html>
