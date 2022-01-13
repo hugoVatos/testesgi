@@ -1,9 +1,7 @@
 from django.db import models
 
-from django.db import models
 
-
-class Clients(models.Model):
+class Assure(models.Model):
     CLIENT = 'client'
     ANCIEN_CLIENT = 'ancien client'
     PROSPECT = 'prospect'

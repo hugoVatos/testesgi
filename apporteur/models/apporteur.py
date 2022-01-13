@@ -25,7 +25,10 @@ class Apporteur(models.Model):
                                                         (Type_1, 'type 1'),
                                                         (Type_2, 'type 2')
                                                     ], null=True)
-    Adress_siege = models.CharField(max_length=50)
+    Adress_siege1 = models.CharField(max_length=50)
+    Adress_siege2 = models.CharField(max_length=50)
+    Adress_siege3 = models.CharField(max_length=50)
+
     CP = models.CharField(max_length=50)
     City = models.CharField(max_length=50)
     Country = models.CharField(max_length=50, choices=[
@@ -38,3 +41,6 @@ class Apporteur(models.Model):
                                                     ], null=True)
     Email = models.EmailField(null=True, default="Some String")
     Mdp = models.CharField(max_length=50, null=True)
+    Convention = models.FileField(blank=True, null=True)
+    ExtraPrime = models.DecimalField(max_digits=5, decimal_places=2)
+    CoCourtage = models.DecimalField(max_digits=5, decimal_places=2)

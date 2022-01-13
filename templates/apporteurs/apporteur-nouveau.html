@@ -37,99 +37,146 @@
                                         	<div class="col-lg-12">
 												<label for="{{ form.Image.id_for_label }}" class="col-lg-12 col-form-label">Image de profil</label>
 	                                            <div class="col-lg-12">
-	                                                <input id="{{ form.Image.id_for_label }}"  type="file" class="form-file-input form-control" style="padding: 10px 16px;">
+	                                                <input id="{{ form.Image.id_for_label }}" name="{{ form.Image.html_name }}" {% if form.Image.value %}value="{{ form.Image.value }}"{% endif %} type="file" class="form-file-input form-control" style="padding: 10px 16px;">
+                                                    {% if form.nom.errors %}
+                                                        {% for error in form.nom.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                    {% endif %}
 	                                            </div>
 	                                        </div>
 
 	                                        <div class="col-lg-3">
-                                                    <label class="col-lg-12 col-form-label">Forme sociale</label>
+                                                    <label for="{{ form.StatSc.id_for_label }}"  class="col-lg-12 col-form-label">Forme sociale</label>
                                                     <div class="col-lg-12">
-						                                <select class="dropdown-groups form-select">
-						                                    <option value="SAS">SAS</option>
-						                                    <option value="SARL">SARL</option>
-						                                </select>
+						                                {{ form.StatSc }}
+                                                        {% if form.StatSc.errors %}
+                                                        {% for error in form.StatSc.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                        {% endif %}
+
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-5">
-                                                    <label class="col-lg-12 col-form-label">Dénomination sociale<span class="text-danger">*</span>
+                                                    <label for="{{ form.DenoSc.id_for_label }}" class="col-lg-12 col-form-label">Dénomination sociale<span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                        <input id="{{ form.DenoSc.id_for_label }}" name="{{ form.DenoSc.html_name }}" {% if form.DenoSc.value %}value="{{ form.DenoSc.value }}"{% endif %}  type="text" class="form-control" placeholder="" required="">
+                                                        {% if form.DenoSc.errors %}
+                                                        {% for error in form.DenoSc.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                        {% endif %}
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-4">
-                                                    <label class="col-lg-12 col-form-label">SIREN<span class="text-danger">*</span></label>
+                                                    <label for="{{ form.Siren.id_for_label }}" class="col-lg-12 col-form-label">SIREN<span class="text-danger">*</span></label>
                                                     <div class="col-lg-12">
-                                                        <input type="number" class="form-control" placeholder="" required="">
+                                                        <input id="{{ form.Siren.id_for_label }}" name="{{ form.Siren.html_name }}" {% if form.Siren.value %}value="{{ form.Siren.value }}"{% endif %} type="number" class="form-control" placeholder="" required="">
+                                                     {% if form.Siren.errors %}
+                                                        {% for error in form.Siren.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                     {% endif %}
                                                     </div>
                                             </div>
                                         	<div class="col-lg-2">
-                                                    <label class="col-lg-12 col-form-label">Adresse 1</label>
+                                                    <label for="{{ form.Adress_siege1.id_for_label }}" class="col-lg-12 col-form-label">Adresse 1</label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                        <input id="{{ form.Adress_siege1.id_for_label }}" name="{{ form.Adress_siege1.html_name }}" {% if form.Adress_siege1.value %}value="{{ form.Adress_siege1.value }}"{% endif %} type="text" class="form-control" placeholder="" required="">
+                                                     {% if form.Adress_siege1.errors %}
+                                                        {% for error in form.Adress_siege1.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                     {% endif %}
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-2">
-                                                    <label class="col-lg-12 col-form-label">Adresse 2</label>
+                                                    <label for="{{ form.Adress_siege2.id_for_label }}" class="col-lg-12 col-form-label">Adresse 1</label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                        <input id="{{ form.Adress_siege2.id_for_label }}" name="{{ form.Adress_siege2.html_name }}" {% if form.Adress_siege2.value %}value="{{ form.Adress_siege2.value }}"{% endif %} type="text" class="form-control" placeholder="" required="">
+                                                     {% if form.Adress_siege2.errors %}
+                                                        {% for error in form.Adress_siege2.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                     {% endif %}
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-2">
-                                                    <label class="col-lg-12 col-form-label">Adresse 3</label>
+                                                    <label for="{{ form.Adress_siege3.id_for_label }}" class="col-lg-12 col-form-label">Adresse 1</label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                        <input id="{{ form.Adress_siege3.id_for_label }}" name="{{ form.Adress_siege3.html_name }}" {% if form.Adress_siege3.value %}value="{{ form.Adress_siege3.value }}"{% endif %} type="text" class="form-control" placeholder="" required="">
+                                                     {% if form.Adress_siege3.errors %}
+                                                        {% for error in form.Adress_siege3.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                     {% endif %}
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-2">
-                                                    <label class="col-lg-12 col-form-label">Code postal<span class="text-danger">*</span>
+                                                    <label for="{{ form.CP.id_for_label }}" class="col-lg-12 col-form-label">Code postal<span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                        <input id="{{ form.CP.id_for_label }}" name="{{ form.CP.html_name }}" {% if form.CP.value %}value="{{ form.CP.value }}"{% endif %} type="text" class="form-control" placeholder="" required="">
+                                                     {% if form.CP.errors %}
+                                                        {% for error in form.CP.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                     {% endif %}
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-2">
-                                                    <label class="col-lg-12 col-form-label">Ville<span class="text-danger">*</span>
+                                                    <label for="{{ form.City.id_for_label }}" class="col-lg-12 col-form-label">Ville<span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                        <input id="{{ form.City.id_for_label }}" name="{{ form.City.html_name }}" {% if form.City.value %}value="{{ form.City.value }}"{% endif %} type="text" class="form-control" placeholder="" required="">
+                                                        {% if form.City.errors %}
+                                                        {% for error in form.City.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                        {% endif %}
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-2">
-                                                    <label class="col-lg-12 col-form-label" for="validationCustom01">Pays<span class="text-danger">*</span></label>
+                                                    <label for="{{ form.Country.id_for_label }}" class="col-lg-12 col-form-label" for="validationCustom01">Pays<span class="text-danger">*</span></label>
                                                     <div class="col-lg-12">
-														<select class="dropdown-groups form-select">
-						                                    <optgroup label="Europe">
-						                                        <option>France</option>
-						                                        <option>Monaco</option>
-						                                        <option>Suisse</option>
-						                                    </optgroup>
-						                                    <optgroup label="Autre">
-						                                        <option>option 1</option>
-						                                        <option>option 2</option>
-						                                        <option>option 3</option>
-						                                    </optgroup>
-						                                </select>
+														{{ form.Country }}
+                                                        {% if form.Country.errors %}
+                                                        {% for error in form.Country.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                        {% endif %}
                                                     </div>
                                             </div>
                                             <div class="col-lg-6">
-                                                    <label class="col-lg-12 col-form-label">E-Mail<span class="text-danger">*</span>
+                                                    <label for="{{ form.Email.id_for_label }}" class="col-lg-12 col-form-label">E-Mail<span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                        <input id="{{ form.Email.id_for_label }}" name="{{ form.Email.html_name }}" {% if form.Email.value %}value="{{ form.Email.value }}"{% endif %} type="text" class="form-control" placeholder="" required="">
+                                                        {% if form.Email.errors %}
+                                                        {% for error in form.Email.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                        {% endif %}
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-6">
-                                                    <label class="col-lg-12 col-form-label">Mot de passe<span class="text-danger">*</span>
+                                                    <label for="{{ form.Mdp.id_for_label }}" class="col-lg-12 col-form-label">Mot de passe<span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="password" class="form-control" placeholder="" required="">
+                                                        <input id="{{ form.Mdp.id_for_label }}" name="{{ form.Mdp.html_name }}" {% if form.Mdp.value %}value="{{ form.Mdp.value }}"{% endif %} type="password" class="form-control" placeholder="" required="">
+                                                        {% if form.Mdp.errors %}
+                                                        {% for error in form.Mdp.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                        {% endif %}
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-12">
-												<label class="col-lg-12 col-form-label">Convention d'apporteur</label>
+												<label for="{{ form.Convention.id_for_label }}" class="col-lg-12 col-form-label">Convention d'apporteur</label>
 	                                            <div class="col-lg-12">
-	                                                <input type="file" class="form-file-input form-control" style="padding: 10px 16px;">
+	                                                <input id="{{ form.Convention.id_for_label }}" name="{{ form.Convention.html_name }}" {% if form.Convention.value %}value="{{ form.Convention.value }}"{% endif %} type="file" class="form-file-input form-control" style="padding: 10px 16px;">
 	                                            </div>
 	                                        </div>
                                         </div>
