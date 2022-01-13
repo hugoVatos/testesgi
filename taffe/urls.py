@@ -22,4 +22,5 @@ urlpatterns = [
 
     #partie apporteur
     path('apporteur/', include("apporteur.urls")),
+    path('assure/', include("assure.urls"))
 ]

@@ -84,11 +84,5 @@ class Assure(models.Model):
     TelM_m = models.CharField(max_length=50, null=True)
     Gel_m = models.BooleanField(blank=False, default=True)
     Rbe = models.BooleanField(blank=False, default=True)
-    Serviceil = models.CharField(max_length=50, null=True)
-    Fonctionil = models.CharField(max_length=50, null=True)
-    Nameil = models.CharField(max_length=50, null=True)
-    Last_Nameil = models.CharField(max_length=50, null=True)
-    Emailil = models.EmailField(blank=False, default="Some String", null=True)
-    TelMil = models.CharField(max_length=50, null=True)
-    TelFil = models.CharField(max_length=50, null=True)
+
     Relation = models.CharField(max_length=50, null=True)
