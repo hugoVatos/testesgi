@@ -24,5 +24,6 @@ urlpatterns = [
     path('apporteur/', include("apporteur.urls")),
     path('assure/', include("assure.urls")),
     path('assureur/', include("assureur.urls")),
-    path('courtier/', include("courtier.urls"))
+    path('courtier/', include("courtier.urls")),
+    path('tier/', include("tier.urls"))
 ]
