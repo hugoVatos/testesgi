@@ -1,3 +1,5 @@
 from django.contrib import admin
+from courtier.models import Courtier
 
-# Register your models here.
+admin.register(Courtier)
+

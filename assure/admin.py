@@ -1,3 +1,5 @@
 from django.contrib import admin
+from assure.models import Assure
 
-# Register your models here.
+admin.register(Assure)
+

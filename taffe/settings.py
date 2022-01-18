@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apporteur.apps.ApporteurConfig',
-    'assure.apps.AssureConfig'
+    'assure.apps.AssureConfig',
+    'assureur.apps.AssureurConfig',
+    'courtier.apps.CourtierConfig',
 
 ]
 

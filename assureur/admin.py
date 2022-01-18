@@ -1,3 +1,5 @@
 from django.contrib import admin
+from assureur.models import Assureur
 
-# Register your models here.
+admin.register(Assureur)
+

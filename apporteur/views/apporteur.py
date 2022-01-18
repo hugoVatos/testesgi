@@ -29,3 +29,11 @@ class CreateApporteurView(TemplateView):
             _msg= 'Apporteur %s créé avec succès' % apporteur.DenoSc
             messages.add_message(request, messages.INFO, message=_msg)
         return self.render_to_response(context, statut=201)
+
+
+class ListApporteurView(TemplateView):
+    template_name = 'apporteurs/apporteur-gestion.html'
+    def get_context_data(self,*args, **kwargs):
+        context = super(ListApporteurView, self).get_context_data(**kwargs)
+        context['apporteurs'] = Apporteur.objects.all()
+        return context
