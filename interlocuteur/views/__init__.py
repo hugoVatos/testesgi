@@ -1,0 +1,2 @@
+from .interlocuteur import CreateInterlocuteurView
+from .interlocuteur import ListInterlocuteurView

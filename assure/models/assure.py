@@ -1,4 +1,5 @@
 from django.db import models
+from interlocuteur.models import Interlocuteur
 
 
 class Assure(models.Model):
@@ -86,3 +87,4 @@ class Assure(models.Model):
     Rbe = models.BooleanField(blank=False, default=True)
 
     Relation = models.CharField(max_length=50, null=True)
+    Interlocuteur = models.ForeignKey(Interlocuteur, on_delete=models.CASCADE)

@@ -1,4 +1,5 @@
 from django.db import models
+from interlocuteur.models import Interlocuteur
 
 class Apporteur(models.Model):
 
@@ -44,3 +45,4 @@ class Apporteur(models.Model):
     Convention = models.FileField(blank=True, null=True)
     ExtraPrime = models.DecimalField(max_digits=5, decimal_places=2)
     CoCourtage = models.DecimalField(max_digits=5, decimal_places=2)
+    Interlocuteur = models.ForeignKey(Interlocuteur, on_delete=models.CASCADE)

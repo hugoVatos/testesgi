@@ -1,4 +1,5 @@
 from django.db import models
+from interlocuteur.models import Interlocuteur
 
 
 class Tier(models.Model):
@@ -29,3 +30,4 @@ class Tier(models.Model):
     CP = models.CharField(max_length=50, null=True)
     City = models.CharField(max_length=50, null=True)
     Country = models.CharField(max_length=50, null=True)
+    Interlocuteur = models.ForeignKey(Interlocuteur, on_delete=models.CASCADE)

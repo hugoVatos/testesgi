@@ -1,4 +1,5 @@
 from django.db import models
+from interlocuteur.models import Interlocuteur
 
 class Assureur(models.Model):
     #assureur
@@ -47,4 +48,5 @@ class Assureur(models.Model):
     Pb = models.FloatField()
     Bdi = models.FloatField()
     Code_bureau = models.FloatField()
+    Interlocuteur = models.ForeignKey(Interlocuteur, on_delete=models.CASCADE)
 
