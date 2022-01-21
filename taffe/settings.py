@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'assureur.apps.AssureurConfig',
     'courtier.apps.CourtierConfig',
     'tier.apps.TierConfig',
-    'core.apps.CoreConfig'
+    'core.apps.CoreConfig',
+    'interlocuteur.apps.InterlocuteurConfig'
 ]
 
 MIDDLEWARE = [
