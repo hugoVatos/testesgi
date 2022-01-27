@@ -1,0 +1,603 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{%  block content %}
+
+		
+		<!--**********************************
+            Content body start
+        ***********************************-->
+        <div class="content-body">
+            <!-- row -->
+            <div class="row page-titles">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item active"><a href="#">Assurés</a></li>
+						<li class="breadcrumb-item"><a href="#">Nouvel Assuré</a></li>
+					</ol>
+            </div>
+            
+			<div class="container-fluid">
+			<div class="row btnadd">
+				<div class="col-lg-2 active"><a href="../assures/assure-nouveau.html"><i class="bi bi-person"></i> Assuré</a></div>
+				<div class="col-lg-2"><a href="../assures/assure-nouveau.html"><i class="bi bi-people"></i> Affilié</a></div>
+				<div class="col-lg-2"><a href="../assureurs/assureur-nouveau.html"><i class="bi bi-shop"></i> Compagnie</a></div>
+				<div class="col-lg-2"><a href="../courtiers/courtier-nouveau.html"><i class="bi bi-file-person"></i> Courtier</a></div>
+				<div class="col-lg-2"><a href="../apporteurs/apporteur-nouveau.html"><i class="bi bi-building"></i> Apporteur</a></div>
+				<div class="col-lg-2"><a href="#"><i class="bi bi-person-circle"></i> Autre</a></div>
+			</div>
+				<form class="needs-validation" novalidate="">
+				<div class="row">
+					<div class="col-lg-6">
+                        <div class="card">
+                        	<div class="card-header">
+                                <h4 class="card-title">Statut</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-validation">
+                                        <div class="row">
+                                            <div class="col-xl-12" style="margin-bottom: 15px;">
+                                            	<select class="dropdown-groups form-select">
+						                                        <option>Client</option>
+						                                        <option>Ancien client</option>
+						                                        <option>Archivé</option>
+						                        </select>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                        	<div class="card-header">
+                                <h4 class="card-title">Type</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-validation">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                    <div class="mb-3 mb-0">
+                                                    <select class="dropdown-groups form-select" id="type" onchange="findmyvalue()" >
+                                                    			<option value="">- Choisir dans la liste -</option>
+						                                        <option value="morale">Personne Morale</option>
+						                                        <option value="physique">Personne Physique</option>
+						                                        <option value="affilie">Affilié</option>
+						                        	</select>
+			                                        </div>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script>
+                    	function findmyvalue()
+						{
+						var myval = document.getElementById("type").value;
+						var element = document.getElementById("typeclient");
+						 if (myval == 'morale') {
+						         element.classList.remove('physique');
+						         element.classList.add('morale');
+						         element.classList.remove('affilie');
+						      } else if (myval == 'physique') {
+						         element.classList.remove('morale');
+						         element.classList.add('physique');
+						         element.classList.remove('affilie');
+						      } else if (myval == 'affilie') {
+						         element.classList.remove('morale');
+						         element.classList.remove('physique');
+						         element.classList.add('affilie');
+						      } else {
+						         element.classList.remove('morale');
+						         element.classList.remove('physique');
+						         element.classList.remove('affilie');
+						      }
+						}
+                    </script>
+				<div id="typeclient">
+					<div class="col-lg-12 persophysique">
+                        <div class="card">
+                            <div class="card-header"><h4 class="card-title">Personne Physique</h4></div>
+                            <div class="card-body">
+                                <div class="form-validation">
+                                        <div class="row">
+                                        	<div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Code Client <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="number" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Civilité <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+														 <select id="single-select" class="form-select">
+						                                    <option value="M">M</option>
+						                                    <option value="Mme">Mme</option>
+						                                </select>
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Nom <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Prénom(s) <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Adresse 1<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Adresse 2<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Adresse 3<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Code postal<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-5">
+                                                    <label class="col-lg-12 col-form-label">Ville<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-5">
+                                                    <label class="col-lg-12 col-form-label">Pays<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+														<select class="dropdown-groups form-select">
+						                                    <optgroup label="Europe">
+						                                        <option>France</option>
+						                                        <option>Monaco</option>
+						                                        <option>Suisse</option>
+						                                    </optgroup>
+						                                    <optgroup label="Autre">
+						                                        <option>option 1</option>
+						                                        <option>option 2</option>
+						                                        <option>option 3</option>
+						                                    </optgroup>
+						                                </select>
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Email<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Tél mobile<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Tél fixe</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Tél pro</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Sexe<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+														<select class="dropdown-groups form-select">
+						                                        <option>Homme</option>
+						                                        <option>Femme</option>
+						                                        <option>Autre</option>
+						                                </select>
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Date de naissance</label>
+                                                    <div class="col-lg-12">
+                                                         <input type="text" class="form-control" placeholder="" id="mdate">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Lieu de naissance</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Nationalité<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+														<select class="dropdown-groups form-select">
+						                                    <optgroup label="Europe">
+						                                        <option>Française</option>
+						                                        <option>Monaco</option>
+						                                        <option>Suisse</option>
+						                                    </optgroup>
+						                                    <optgroup label="Autre">
+						                                        <option>option 1</option>
+						                                        <option>option 2</option>
+						                                        <option>option 3</option>
+						                                    </optgroup>
+						                                </select>
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Situation de famille</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Profession précise</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label"><a href="javascript:void()">Registre national des gels</a></label>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-check">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+															Valide
+														  </label>
+														</div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                    	</div>
+                    </div>
+                    <div class="col-lg-12 persomorale">
+                        <div class="card">
+							<div class="card-header"><h4 class="card-title">Personne Morale</h4></div>
+                            <div class="card-body">
+                                <div class="form-validation">
+                                        <div class="row">
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Code Client <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="number" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-5">
+                                                    <label class="col-lg-12 col-form-label">Dénomination sociale<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Sigle / marque</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Forme sociale <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+														 <select id="single-select" class="form-select">
+						                                    <option value="SAS">SAS</option>
+						                                    <option value="SARL">SARL</option>
+						                                </select>
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Date de création<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                         <input type="text" class="form-control" placeholder="" id="mdate" required="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">SIREN (Afficher uniquement pour FR)<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="number" class="form-control" placeholder="" required="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Activités précises</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                            </div>
+                                        	<div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Adresse 1<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Adresse 2<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Adresse 3<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Code postal<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-5">
+                                                    <label class="col-lg-12 col-form-label">Ville<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-5">
+                                                    <label class="col-lg-12 col-form-label">Pays<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+														<select class="dropdown-groups form-select">
+						                                    <optgroup label="Europe">
+						                                        <option>France</option>
+						                                        <option>Monaco</option>
+						                                        <option>Suisse</option>
+						                                    </optgroup>
+						                                    <optgroup label="Autre">
+						                                        <option>option 1</option>
+						                                        <option>option 2</option>
+						                                        <option>option 3</option>
+						                                    </optgroup>
+						                                </select>
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Nom du représentant légal<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Prénom<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Fonction du représentant légal <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="number" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Email<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Tél mobile<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Tél fixe</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                    <label class="col-lg-12 col-form-label"><a href="javascript:void()">API Bénéficiaire Effectif (RBE)</a></label>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-check">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+															Valide
+														  </label>
+														</div>
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                    <label class="col-lg-12 col-form-label"><a href="javascript:void()">Registre national des gels</a></label>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-check">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+															Valide
+														  </label>
+														</div>
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                    <label class="col-lg-12 col-form-label">Bénéficiaires effectifs détenant + de 25% du capital</label>
+                                                    <div class="col-lg-12">
+                                                       <textarea class="form-control"  rows="3"></textarea>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 persomorale persophysique">
+                        <div class="card">
+							<div class="card-header"><h4 class="card-title">Informations Complémentaires</h4></div>
+                            <div class="card-body">
+                                <div class="form-validation">
+                                        <div class="row">
+                                        	<div class="col-lg-6">
+												<label class="col-lg-12 col-form-label">Image de profil</label>
+	                                            <div class="col-lg-12">
+	                                                <input type="file" class="form-file-input form-control" style="padding: 10px 16px;">
+	                                            </div>
+	                                        </div>
+	                                        <div class="col-lg-6">
+                                                    <label class="col-lg-12 col-form-label">Mot de passe<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="password" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Date de création</label>
+                                                    <div class="col-lg-12">
+                                                         <input type="text" class="form-control" placeholder="" id="mdate" required="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Auteur Création</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                        	</div>
+                                            <div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Date de modification</label>
+                                                    <div class="col-lg-12">
+                                                         <input type="text" class="form-control" placeholder="" id="mdate" required="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-3">
+                                                    <label class="col-lg-12 col-form-label">Auteur Modification</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-8">
+                                                    <label class="col-lg-12 col-form-label">Relation inter-client</label>
+                                                    <div class="col-lg-12">
+													<select class="multi-select" name="client[]" multiple="multiple">
+					                                    <option value="AL">Client 1</option>
+					                                    <option value="WY">Client 2</option>
+					                                    <option value="UI">Client 3</option>
+					                                </select>
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label"><a href="javascript:void()">Visibilité au niveau de la GED</a></label>
+                                                    <div class="col-lg-12">
+                                                        <div class="form-check">
+														  <input class="form-check-input" type="checkbox" value="">
+														  <label class="form-check-label">
+															Client VIP
+														  </label>
+														</div>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        
+                                </div>
+                            </div>
+                    	</div>
+                    </div>
+                                        <div class="col-lg-12 parent-div persomorale">
+                        <div class="card" id="copy-this-div">
+							<div class="card-header"><h4 class="card-title">Interlocuteur</h4></div>
+                            <div class="card-body">
+                                <div class="form-validation">
+                                        <div class="row">
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Service</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-2">
+                                                    <label class="col-lg-12 col-form-label">Fonction</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                        	</div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Nom de l’interlocuteur<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Prénom de l’interlocuteur<span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                        	</div>
+   
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Email<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Tél mobile<span class="text-danger">*</span></label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                    </div>
+                                            </div>
+                                            <div class="col-lg-4">
+                                                    <label class="col-lg-12 col-form-label">Tél fixe</label>
+                                                    <div class="col-lg-12">
+                                                        <input type="text" class="form-control" placeholder="">
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 persomorale">
+				            <button type="button" class="btn btn-success add-btn">Ajouter un interlocuteur</button>
+				    </div>
+				</div>	
+				                                    <div class="col-lg-12 ms-auto">
+                                            <button type="submit" class="btn btn-primary valider">Valider</button>
+                                         </div>
+				</div>
+				</form>
+            </div>
+            
+			
+        </div>
+        <!--**********************************
+            Content body end
+        ***********************************-->
+		
+
+
+{% endblock %}
