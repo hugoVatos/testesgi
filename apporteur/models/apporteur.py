@@ -1,6 +1,7 @@
 from django.db import models
 from interlocuteur.models import Interlocuteur
 
+
 class Apporteur(models.Model):
 
     SAS = 'SAS'
@@ -13,7 +14,6 @@ class Apporteur(models.Model):
     Option_1 = 'option 1'
     Option_2 = 'option 2'
     Option_3 = 'option 3'
-
 
     Image = models.FileField(blank=True, null=True)
     DenoSc = models.CharField(max_length=50, null=True)

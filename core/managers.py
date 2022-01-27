@@ -2,7 +2,7 @@ from django.contrib.auth.base_user import BaseUserManager
 from django.db import models
 
 
-class BBandCoUserQueryset(models.QuerySet):
+class TaffeQueryset(models.QuerySet):
     pass
 
 
@@ -10,7 +10,7 @@ class UserManager(BaseUserManager):
     use_in_migrations = True
 
     def get_queryset(self):
-        return BBandCoUserQueryset(model=self.model, using=self._db, hints=self._hints)
+        return BBandcoUserQueryset(model=self.model, using=self._db, hints=self._hints)
 
     def _create_user(self, email, password, **extra_fields):
         """
@@ -37,5 +37,5 @@ class UserManager(BaseUserManager):
 
         return self._create_user(email, password, **extra_fields)
 
-    def get_bbandco_users(self):
-        return self.get_queryset().get_bbandco_users()
+    def get_taffe_users(self):
+        return self.get_queryset().get_taffe_users()
