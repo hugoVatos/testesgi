@@ -2,141 +2,135 @@
 {% load static %}
 
 {% block content %}
-<!--**********************************
-            Content body start
-***********************************-->
-<div class="content-body">
-    <!-- row -->
-    <div class="row page-titles">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active"><a href="#">Gestion</a></li>
-            <li class="breadcrumb-item"><a href="#">Nouvel utilisateur</a></li>
-        </ol>
+    <!--**********************************
+                Content body start
+    ***********************************-->
+    <div class="content-body">
+        <!-- row -->
+        <div class="row page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active"><a href="#">Gestion</a></li>
+                <li class="breadcrumb-item"><a href="#">Nouvel utilisateur</a></li>
+            </ol>
+        </div>
+        <div class="container-fluid">
+            <form class="needs-validation" method="post" novalidate>
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Statut</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-validation">
+
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="mb-3 mb-0">
+                                                {{ form.statut }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4 class="card-title">Société</h4>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-validation">
+
+                                    <div class="row">
+                                        <div class="col-xl-12">
+                                            <div class="mb-3 mb-0">
+                                                {{ form.entreprise }}
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="card">
+                            <div class="card-header"><h4 class="card-title">Utilisateur</h4></div>
+                            <div class="card-body">
+                                <div class="form-validation">
+
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <label class="col-lg-12 col-form-label" for="validationCustom01">Role<span
+                                                    class="text-danger">*</span></label>
+                                            <div class="col-lg-12">
+                                                {{ form.role }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label class="col-lg-12 col-form-label">Civilité <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-12">
+                                                {{ form.civilite }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label class="col-lg-12 col-form-label">Nom <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-12">
+                                                {{ form.nom }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label class="col-lg-12 col-form-label">Prénom(s) <span
+                                                    class="text-danger">*</span>
+                                            </label>
+                                            <div class="col-lg-12">
+                                                {{ form.prenom }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label class="col-lg-12 col-form-label">Email<span
+                                                    class="text-danger">*</span></label>
+                                            <div class="col-lg-12">
+                                                {{ form.email }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label class="col-lg-12 col-form-label">Mot de passe<span
+                                                    class="text-danger">*</span></label>
+                                            <div class="col-lg-12">
+                                                {{ form.mdp }}
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4">
+                                            <label class="col-lg-12 col-form-label">Avatar<span
+                                                    class="text-danger">*</span></label>
+                                            <div class="col-lg-12">
+                                                {{ form.avatar }}
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lg-12 ms-auto">
+                                            <button type="submit" class="btn btn-primary valider">Valider</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </form>
+        </div>
+
     </div>
-    <div class="container-fluid">
-        <form class="needs-validation" novalidate="">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Statut</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-validation">
-
-                                <div class="row">
-                                    <div class="col-xl-12">
-                                        <div class="mb-3 mb-0">
-                                            <label class="radio-inline me-3"><input type="radio" name="optradio"> Actif</label>
-                                            <label class="radio-inline me-3"><input type="radio" name="optradio">
-                                                Non-actif</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="card">
-                        <div class="card-header">
-                            <h4 class="card-title">Société</h4>
-                        </div>
-                        <div class="card-body">
-                            <div class="form-validation">
-
-                                <div class="row">
-                                    <div class="col-xl-12">
-                                        <div class="mb-3 mb-0">
-                                            <label class="radio-inline me-3"><input type="radio" name="optradio"> Taffe</label>
-                                            <label class="radio-inline me-3"><input type="radio" name="optradio"> Gruvel</label>
-                                            <label class="radio-inline me-3"><input type="radio" name="optradio"> Delta</label>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12">
-                    <div class="card">
-                        <div class="card-header"><h4 class="card-title">Utilisateur</h4></div>
-                        <div class="card-body">
-                            <div class="form-validation">
-
-                                <div class="row">
-                                    <div class="col-lg-12">
-                                        <label class="col-lg-12 col-form-label" for="validationCustom01">Role<span
-                                                class="text-danger">*</span></label>
-                                        <div class="col-lg-12">
-                                            <select class="dropdown-groups form-select">
-                                                <option></option>
-                                                <option>Administrateur</option>
-                                                <option>Production</option>
-                                                <option>Commerce</option>
-                                                <option>Comptabilité</option>
-                                                <option>Sinistre</option>
-                                                <option>Direction</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <label class="col-lg-12 col-form-label">Civilité <span
-                                                class="text-danger">*</span>
-                                        </label>
-                                        <div class="col-lg-12">
-                                            <select id="single-select" class="form-select">
-                                                <option value="M">M</option>
-                                                <option value="Mme">Mme</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <label class="col-lg-12 col-form-label">Nom <span class="text-danger">*</span>
-                                        </label>
-                                        <div class="col-lg-12">
-                                            <input type="text" class="form-control" placeholder="" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <label class="col-lg-12 col-form-label">Prénom(s) <span
-                                                class="text-danger">*</span>
-                                        </label>
-                                        <div class="col-lg-12">
-                                            <input type="text" class="form-control" placeholder="" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="col-lg-12 col-form-label">Email<span class="text-danger">*</span></label>
-                                        <div class="col-lg-12">
-                                            <input type="text" class="form-control" placeholder="" required="">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <label class="col-lg-12 col-form-label">Mot de passe<span
-                                                class="text-danger">*</span></label>
-                                        <div class="col-lg-12">
-                                            <input type="password" class="form-control" placeholder="" required="">
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="col-lg-12 ms-auto">
-                                    <button type="submit" class="btn btn-primary valider">Valider</button>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-
-</div>
-<!--**********************************
-    Content body end
-***********************************-->
+    <!--**********************************
+        Content body end
+    ***********************************-->
 {% endblock %}

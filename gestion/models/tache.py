@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.utils import timezone
 
 class TacheType(models.Model):
     class Meta:
@@ -13,13 +13,28 @@ def tache_file_directory_path(instance, filename):
 
 
 class Tache(models.Model):
-    assignation = models.ForeignKey('tier.Tier', on_delete=models.CASCADE)
-    type = models.ForeignKey(TacheType, on_delete=models.CASCADE)
-    interlocuteur = models.ForeignKey('gestion.Utilisateur', on_delete=models.CASCADE, blank=True, null=True)
-    file = models.FileField(upload_to=tache_file_directory_path, null=True, blank=True)
-    object = models.CharField(max_length=120)
-    comment = models.TextField(blank=True, null=True)
-    deadline = models.DateTimeField(null=True, blank=True)
+
+    TYPE_TACHE_CHOICES = [
+        ('rdv-tel', 'Rdv téléphonique'),
+        ('rdv-phy', 'Rdv physique'),
+        ('relance', 'Relance'),
+        ('lettre', 'Envoie lettre recommandée'),
+        ('avenant', 'Création d\'avenant'),
+        ('autre', 'Autres'),
+    ]
+    STATUT_CHOICES = [
+        ('en-cours','En cours'),
+        ('termine','Terminée')
+    ]
+    type =  models.CharField(max_length=30, choices=TYPE_TACHE_CHOICES)
+    date_limite = models.DateTimeField(default=timezone.now)
+    statut = models.CharField(max_length=30, choices=STATUT_CHOICES)
+    commentaire = models.TextField(blank=True, null=True)
+    assignation = models.ForeignKey('gestion.Utilisateur', on_delete=models.CASCADE, blank=True, null=True)
+    client = models.ForeignKey('tier.Tier', on_delete=models.CASCADE, blank=True, null=True)
+    contrat = models.ForeignKey('contrat.Contrat', on_delete=models.CASCADE, blank=True, null=True)
+    auteur = models.ForeignKey('gestion.Utilisateur', on_delete=models.CASCADE, blank=True, null=True)
+    date_ajout = models.DateTimeField(auto_now=True)
     done = models.BooleanField(default=False)
 
     class Meta:
@@ -27,4 +42,4 @@ class Tache(models.Model):
         verbose_name_plural = "tâches"
 
     def __str__(self):
-        return self.object
+        return self.commentaire

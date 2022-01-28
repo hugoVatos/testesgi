@@ -1,4 +1,3 @@
-import logging
 from django.contrib import messages
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponseRedirect
@@ -9,7 +8,6 @@ from django.urls import reverse
 from gestion.forms import TacheForm
 from gestion.models import Tache
 
-logging.getLogger('taffe')
 
 class CreateTacheView(TemplateView):
     template_name = 'gestion/tache-nouveau.html'
@@ -39,19 +37,17 @@ class CreateTacheView(TemplateView):
         except Exception as e:
             _msg = 'Une erreur (%s) est survenue lors de la création de la tâche %s: %s' % (
                 type(e).__name__, self.request.POST['object'], e)
-            logger.error('%s %s' % (_lp, _msg))
             messages.add_message(request, messages.ERROR, message=_msg)
             return self.render_to_response(context, status=500)
         else:
             _msg = 'Tâche créé avec succès'
-            logger.info('%s %s' % (_lp, _msg))
             messages.add_message(request, messages.INFO, message=_msg)
         return self.render_to_response(context, status=201)
 
 
 class EditTacheView(TemplateView):
-    template_name = 'account/edit-task.html'
-    permissions = ['account.change_task']
+    template_name = 'gestion/tache-nouveau.html'
+    permissions = ['gestion.change_task']
     form_class = TacheForm
 
     def get_context_data(self, form=None, *args, **kwargs):
@@ -78,12 +74,10 @@ class EditTacheView(TemplateView):
         except Exception as e:
             _msg = 'Une erreur (%s) est survenue lors de la modification de la tâche %s: %s' % (
                 type(e).__name__, self.request.POST['object'], e)
-            logger.error('%s %s' % (_lp, _msg))
             messages.add_message(request, messages.ERROR, message=_msg)
             return self.render_to_response(context, status=500)
         else:
             _msg = 'Tâche modifiée avec succès'
-            logger.info('%s %s' % (_lp, _msg))
             messages.add_message(request, messages.INFO, message=_msg)
         return self.render_to_response(context, status=200)
 
@@ -110,7 +104,6 @@ class ListTacheView(TemplateView):
 
     def get_context_data(self, *args, **kwargs):
         executor = self.request.user
-        logger.debug('groups: %s' % executor.groups.filter(name='Administrateur').exists())
         if not executor.is_superuser or not executor.groups.filter(name='Administrateur').exists():
             raise PermissionDenied
         _lp = '[%s] %s.get_context_data' % (executor, self.__class__.__name__)

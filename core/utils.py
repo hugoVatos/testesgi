@@ -1,6 +1,12 @@
 import importlib
 import logging
 
+from django.contrib.auth.forms import PasswordResetForm
+from django.http import HttpResponse, HttpResponseRedirect
+from django.shortcuts import render
+from django.urls import reverse
+
+
 from gestion.models.utilisateur import Utilisateur
 
 logger = logging.getLogger('taffe')
@@ -75,3 +81,21 @@ def user_exists(username):
         return False
     else:
         return True
+
+
+def password_reset_request(request):
+    if request.method == "POST":
+        password_reset_form = PasswordResetForm(request.POST)
+        if password_reset_form.is_valid():
+            data = password_reset_form.cleaned_data['email']
+            associated_users = Utilisateur.objects.get(email=data)
+            if associated_users:
+                try:
+                    pass
+                    #emailing.send_init_password_mail(associated_users)
+                except Exception as e:
+                    return HttpResponse('Une erreur (%s) est survenue: %s' % (type(e).__name__, e))
+                return HttpResponseRedirect(reverse('password_reset_done'))
+    password_reset_form = PasswordResetForm()
+    return render(request=request, template_name="account/password_reset.html",
+                  context={"password_reset_form": password_reset_form})

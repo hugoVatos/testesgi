@@ -28,5 +28,8 @@ urlpatterns = [
     path('assure/', include("assure.urls")),
     path('assureur/', include("assureur.urls")),
     path('courtier/', include("courtier.urls")),
-    path('tier/', include("tier.urls"))
+    path('tier/', include("tier.urls")),
+
+    # Partie gestion
+    path('gestion/', include("gestion.urls"))
 ]

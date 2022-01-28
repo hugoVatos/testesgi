@@ -2,105 +2,110 @@
 {% load static %}
 
 {% block content %}
-<!--**********************************
-            Content body start
-***********************************-->
-<div class="content-body">
-    <!-- row -->
-    <div class="row page-titles">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active"><a href="#">Gestion</a></li>
-            <li class="breadcrumb-item"><a href="#">Utilisateurs</a></li>
-        </ol>
-    </div>
-    <div class="container-fluid">
+    <!--**********************************
+                Content body start
+    ***********************************-->
+    <div class="content-body">
+        <!-- row -->
+        <div class="row page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active"><a href="#">Gestion</a></li>
+                <li class="breadcrumb-item"><a href="#">Utilisateurs</a></li>
+            </ol>
+        </div>
+        <div class="container-fluid">
 
 
-        <div class="row mb-4 align-items-center">
-            <div class="col-xl-9 bandeautable">
-                <div class="card m-0 ">
-                    <div class="card-body px-4 py-3 py-lg-2">
-                        <div class="row align-items-center">
-                            <div class="col-xl-4 col-md-4 col-sm-4 my-2">
-                                <div class="media align-items-center style-2">
+            <div class="row mb-4 align-items-center">
+                <div class="col-xl-9 bandeautable">
+                    <div class="card m-0 ">
+                        <div class="card-body px-4 py-3 py-lg-2">
+                            <div class="row align-items-center">
+                                <div class="col-xl-4 col-md-4 col-sm-4 my-2">
+                                    <div class="media align-items-center style-2">
 													<span class="me-3">
 														<i class="bi bi-person-check-fill"></i>
 													</span>
-                                    <div class="media-body ml-1">
-                                        <p class="mb-0 fs-12">Utilisateurs Actif</p>
-                                        <h4 class="mb-0 font-w600  fs-22">350</h4>
+                                        <div class="media-body ml-1">
+                                            <p class="mb-0 fs-12">Utilisateurs Actif</p>
+                                            <h4 class="mb-0 font-w600  fs-22">350</h4>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-4 col-md-4 col-sm-4 my-2">
-                                <div class="media align-items-center style-2">
+                                <div class="col-xl-4 col-md-4 col-sm-4 my-2">
+                                    <div class="media align-items-center style-2">
 													<span class="me-3">
 														<i class="bi bi-person-dash-fill"></i>
 													</span>
-                                    <div class="media-body ml-1">
-                                        <p class="mb-0 fs-12">Utilisateurs non Actif</p>
-                                        <h4 class="mb-0 font-w600  fs-22">200</h4>
+                                        <div class="media-body ml-1">
+                                            <p class="mb-0 fs-12">Utilisateurs non Actif</p>
+                                            <h4 class="mb-0 font-w600  fs-22">200</h4>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="ccol-xl-4 col-md-4 col-sm-4 my-2">
-                                <div class="media align-items-center style-2">
+                                <div class="ccol-xl-4 col-md-4 col-sm-4 my-2">
+                                    <div class="media align-items-center style-2">
 													<span class="me-3">
 														<i class="bi bi-person-bounding-box"></i>
 													</span>
-                                    <div class="media-body ml-1">
-                                        <p class="mb-0 fs-12">Administrateurs</p>
-                                        <h4 class="mb-0 font-w600  fs-22">5</h4>
+                                        <div class="media-body ml-1">
+                                            <p class="mb-0 fs-12">Administrateurs</p>
+                                            <h4 class="mb-0 font-w600  fs-22">5</h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-3 align-self-start mt-3 mt-xl-0 Generate">
+                    <a href="../gestion/utilisateur-nouveau.html" class="btn btn-secondary d-block">Ajouter un
+                        utilisateur</a>
+                </div>
             </div>
-            <div class="col-xl-3 align-self-start mt-3 mt-xl-0 Generate">
-                <a href="../gestion/utilisateur-nouveau.html" class="btn btn-secondary d-block">Ajouter un
-                    utilisateur</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table id="taffe" class="display" style="min-width: 845px">
-                                <thead>
-                                <tr>
-                                    <th style="width: 5%;"></th>
-                                    <th>Utilisateur</th>
-                                    <th>Type</th>
-                                    <th>Société</th>
-                                    <th>Statut</th>
-                                    <th style="width: 10%;">Action</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td><img class="rounded-circle" width="35"
-                                             src="../template/images/profile-image.png" alt=""></td>
-                                    <td>Gerald Dupond</td>
-                                    <td>Administrateur</td>
-                                    <td>Taffe</td>
-                                    <td class="centrer"><span class="badge badge-success">Actif</span></td>
-                                    <td class="centrer"><a class="iconmod" href="#"><i
-                                            class="bi bi-pencil-fill"></i></a></td>
-                                </tr>
-                                </tbody>
-                            </table>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="taffe" class="display" style="min-width: 845px">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 5%;"></th>
+                                        <th>Utilisateur</th>
+                                        <th>Type</th>
+                                        <th>Société</th>
+                                        <th>Statut</th>
+                                        <th style="width: 10%;">Action</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for utilisateur in utilisateurs %}
+                                    <tr>
+                                        <td><img class="rounded-circle" width="35"
+                                                 src="{{ utilisateur.get_avatar }}"
+                                                 alt="Image du collaborateur">
+                                        </td>
+                                        <td>{{ utilisateur.prenom }} {{ utilisateur.nom }}</td>
+                                        <td>{{ utilisateur.role }}</td>
+                                        <td>{{ utilisateur.entreprise }}</td>
+                                        <td class="centrer"><span class="badge badge-{{ utilisateur.statut }}">{{ utilisateur.statut }}</span></td>
+                                        <td class="centrer">
+                                            <a class="iconmod" href="{% url 'gestion:edition-utilisateur' pk=utilisateur.pk %}"><i class="bi bi-pencil-fill"></i></a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</div>
-<!--**********************************
-    Content body end
-***********************************-->
+    </div>
+    <!--**********************************
+        Content body end
+    ***********************************-->
 {% endblock %}
