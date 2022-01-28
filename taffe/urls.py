@@ -22,6 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('connexion/', auth.LoginView.as_view(template_name="connexion.html"), name="connexion"),
 
+    path('core/', include("core.urls")),
     # partie apporteur
     path('apporteur/', include("apporteur.urls")),
     path('assure/', include("assure.urls")),

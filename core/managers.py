@@ -10,7 +10,7 @@ class UserManager(BaseUserManager):
     use_in_migrations = True
 
     def get_queryset(self):
-        return BBandcoUserQueryset(model=self.model, using=self._db, hints=self._hints)
+        return TaffeQueryset(model=self.model, using=self._db, hints=self._hints)
 
     def _create_user(self, email, password, **extra_fields):
         """

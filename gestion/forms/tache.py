@@ -1,16 +1,24 @@
 from django import forms
+from django.contrib.auth.models import Group
+import logging
+
+from gestion.models import Tache
+from core.forms import DatetimeInput
+
+logger = logging.getLogger('taffe')
 
 
-class TaskForm(forms.ModelForm):
+
+class TacheForm(forms.ModelForm):
     class Meta:
-        model = Task
+        model = Tache
         fields = ['assignation', 'type', 'customer', 'file', 'object', 'comment', 'deadline']
         widgets = {
             'deadline': DatetimeInput(format='%Y-%m-%dT%H:%M'),
         }
 
     def __init__(self, *args, **kwargs):
-        super(TaskForm, self).__init__(*args, **kwargs)
+        super(TacheForm, self).__init__(*args, **kwargs)
 
         # Ajout des classes
         self.fields['assignation'].widget.attrs['class'] = 'form-control selectpicker'
@@ -24,4 +32,4 @@ class TaskForm(forms.ModelForm):
         self.fields['assignation'].widget.attrs['data-live-search'] = 'true'
         self.fields['customer'].widget.attrs['data-live-search'] = 'true'
 
-        self.fields['assignation'].queryset = User.objects.get_bbandco_users()
+        self.fields['assignation'].queryset = Utilisateur.objects.get_taffe_users()
