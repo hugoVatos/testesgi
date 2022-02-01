@@ -31,18 +31,22 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'apporteur.apps.ApporteurConfig',
     'assure.apps.AssureConfig',
     'assureur.apps.AssureurConfig',
     'courtier.apps.CourtierConfig',
     'tier.apps.TierConfig',
     'core.apps.CoreConfig',
-    'interlocuteur.apps.InterlocuteurConfig'
+    'interlocuteur.apps.InterlocuteurConfig',
+    'gestion.apps.GestionConfig'
+
 ]
 
 MIDDLEWARE = [

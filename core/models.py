@@ -7,7 +7,7 @@ from django.db import models
 from core.managers import UserManager
 
 
-class User(AbstractUser):
+class Utilisateur(AbstractUser):
     username = None
     email = models.EmailField('email address', unique=True)
 
@@ -30,23 +30,23 @@ class User(AbstractUser):
         return True
 
     @property
-    def is_customer(self):
+    def is_apporteur(self):
         return self.groups.filter(name="Apporteur").exists()
 
     @property
-    def is_commercial(self):
+    def is_tier(self):
         return self.groups.filter(name="Tier").exists()
 
     @property
-    def is_preparer(self):
+    def is_assure(self):
         return self.groups.filter(name="Assure").exists()
 
     @property
-    def is_collaborator(self):
+    def is_assureur(self):
         return self.groups.filter(name="Assureur").exists()
 
     @property
-    def is_faconnier(self):
+    def is_courtier(self):
         return self.groups.filter(name="Courtier").exists()
 
     @property

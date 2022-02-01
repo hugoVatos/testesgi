@@ -5,6 +5,7 @@ from django.db import models
 def user_directory_path(instance, filename):
     return '/media/users/{0}/{1}'.format(instance, filename)
 
+
 class Utilisateur(models.Model):
     TYPE_USER_CHOICE = [
         ('actif', 'Actif'),
@@ -27,8 +28,7 @@ class Utilisateur(models.Model):
     prenom = models.CharField(max_length=120)
     email = models.CharField(max_length=20)
     mdp = models.CharField(max_length=100)
-    avatar = models.ImageField(upload_to=user_directory_path, null=True, blank=True,
-                               default='static/images/equipe/25.jpg')
+    avatar = models.ImageField(upload_to=user_directory_path, null=True, blank=True)
 
     class Meta:
         verbose_name = "utilisateur"

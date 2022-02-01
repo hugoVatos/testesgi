@@ -1,23 +1,11 @@
 from django import forms
-import logging
 
 from django.contrib.auth.models import Group
 from core.utils import create_user_account
 from gestion.models.utilisateur import Utilisateur
 
-logger = logging.getLogger('mgl')
-
 
 class CreateUtilisateurForm(forms.ModelForm):
-    statut = forms.CharField(max_length=20, widget=forms.RadioSelect)
-    entreprise = forms.CharField(max_length=20, widget=forms.RadioSelect)
-    role = forms.ModelChoiceField(queryset=Group.objects.all(), widget=forms.Select)
-    civilite = forms.CharField(max_length=10, required=True)
-    nom = forms.CharField(max_length=120, required=True)
-    prenom = forms.CharField(max_length=120, required=True)
-    email = forms.EmailField(max_length=20, required=True)
-    mdp = forms.PasswordInput()
-    avatar = forms.ImageField(required=False)
 
     class Meta:
         model = Utilisateur
@@ -27,10 +15,12 @@ class CreateUtilisateurForm(forms.ModelForm):
         super(CreateUtilisateurForm, self).__init__(*args, **kwargs)
 
         # Ajout des classes
-        self.fields['statut'].widget.attrs['class'] = 'radio-inline me-3'
-        self.fields['entreprise'].widget.attrs['class'] = 'radio-inline me-3'
-        self.fields['role'].widget.attrs['class'] = 'form-control'
-        self.fields['civilite'].widget.attrs['class'] = 'form-control'
+        self.fields["statut"].widget = forms.RadioSelect(choices=self.fields["statut"].choices,
+                                                         attrs={"class": "radio-inline me-3"})
+        self.fields["entreprise"].widget = forms.RadioSelect(choices=self.fields["entreprise"].choices,
+                                                         attrs={"class": "radio-inline me-3"})
+        self.fields['role'].widget.attrs['class'] = 'dropdown-groups form-select'
+        self.fields['civilite'].widget.attrs['class'] = 'dropdown-groups form-select'
         self.fields['nom'].widget.attrs['class'] = 'form-control'
         self.fields['prenom'].widget.attrs['class'] = 'form-control'
         self.fields['email'].widget.attrs['class'] = 'form-control'
@@ -73,10 +63,12 @@ class EditUtilisateurForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super(EditUtilisateurForm, self).__init__(*args, **kwargs)
         # Ajout des classes
-        self.fields['statut'].widget.attrs['class'] = 'form-select'
-        self.fields['entreprise'].widget.attrs['class'] = 'form-control'
-        self.fields['role'].widget.attrs['class'] = 'form-control'
-        self.fields['civilite'].widget.attrs['class'] = 'form-control'
+        self.fields["statut"].widget = forms.RadioSelect(choices=self.fields["statut"].choices,
+                                                         attrs={"class": "radio-inline me-3"})
+        self.fields["entreprise"].widget = forms.RadioSelect(choices=self.fields["entreprise"].choices,
+                                                             attrs={"class": "radio-inline me-3"})
+        self.fields['role'].widget.attrs['class'] = 'dropdown-groups form-select'
+        self.fields['civilite'].widget.attrs['class'] = 'dropdown-groups form-select'
         self.fields['nom'].widget.attrs['class'] = 'form-control'
         self.fields['prenom'].widget.attrs['class'] = 'form-control'
         self.fields['email'].widget.attrs['class'] = 'form-control'

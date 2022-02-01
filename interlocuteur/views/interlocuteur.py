@@ -3,6 +3,7 @@ from interlocuteur.models import Interlocuteur
 from interlocuteur.forms import InterlocuteurForm
 from django.views.generic.base import TemplateView
 
+
 class CreateInterlocuteurView(TemplateView):
     form_class = InterlocuteurForm
     template_name = '/apporteur-nouveau.html'
