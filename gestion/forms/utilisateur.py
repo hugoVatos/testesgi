@@ -18,7 +18,7 @@ class CreateUtilisateurForm(forms.ModelForm):
         self.fields["statut"].widget = forms.RadioSelect(choices=self.fields["statut"].choices,
                                                          attrs={"class": "radio-inline me-3"})
         self.fields["entreprise"].widget = forms.RadioSelect(choices=self.fields["entreprise"].choices,
-                                                         attrs={"class": "radio-inline me-3"})
+                                                             attrs={"class": "radio-inline me-3"})
         self.fields['role'].widget.attrs['class'] = 'dropdown-groups form-select'
         self.fields['civilite'].widget.attrs['class'] = 'dropdown-groups form-select'
         self.fields['nom'].widget.attrs['class'] = 'form-control'

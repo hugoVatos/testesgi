@@ -3,7 +3,7 @@ from django.db import models
 
 
 def user_directory_path(instance, filename):
-    return '/media/users/{0}/{1}'.format(instance, filename)
+    return 'media/users/{0}/{1}'.format(instance, filename)
 
 
 class Utilisateur(models.Model):
