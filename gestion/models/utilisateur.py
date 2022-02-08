@@ -3,7 +3,7 @@ from django.db import models
 
 
 def user_directory_path(instance, filename):
-    return 'media/users/{0}/{1}'.format(instance, filename)
+    return '/media/users/{0}/{1}'.format(instance, filename)
 
 
 class Utilisateur(models.Model):
@@ -20,10 +20,10 @@ class Utilisateur(models.Model):
         ('masculin', 'M'),
         ('feminin', 'Mme')
     ]
-    statut = models.CharField(max_length=10, choices=TYPE_USER_CHOICE)
-    entreprise = models.CharField(max_length=10, choices=COMPANY_CHOICES)
-    role = models.CharField(max_length=30, default='Commerce')
-    civilite = models.CharField(max_length=10, choices=GENDER_CHOICE)
+    statut = models.CharField(max_length=10, choices=TYPE_USER_CHOICE, default=None)
+    entreprise = models.CharField(max_length=10, choices=COMPANY_CHOICES, default=None)
+    role = models.CharField(max_length=30, default=None)
+    civilite = models.CharField(max_length=10, choices=GENDER_CHOICE, default=None)
     nom = models.CharField(max_length=120)
     prenom = models.CharField(max_length=120)
     email = models.CharField(max_length=20)
@@ -39,4 +39,4 @@ class Utilisateur(models.Model):
 
     @property
     def get_avatar(self):
-        return '{0}{1}'.format(MEDIA_URL, self.avatar)
+        return '/{0}{1}'.format(MEDIA_URL, self.avatar)

@@ -6,6 +6,16 @@ from gestion.models.utilisateur import Utilisateur
 
 
 class CreateUtilisateurForm(forms.ModelForm):
+    statut = forms.ChoiceField(choices=Utilisateur.TYPE_USER_CHOICE)
+    entreprise = forms.ChoiceField( choices=Utilisateur.COMPANY_CHOICES)
+    role = forms.ModelChoiceField(queryset=Group.objects.all(), widget=forms.Select)
+    civilite = forms.ChoiceField(choices=Utilisateur.GENDER_CHOICE)
+    nom = forms.CharField(max_length=120)
+    prenom = forms.CharField(max_length=120)
+    email = forms.CharField(max_length=20)
+    mdp = forms.PasswordInput()
+    avatar = forms.ImageField(required=False)
+
 
     class Meta:
         model = Utilisateur
@@ -15,10 +25,12 @@ class CreateUtilisateurForm(forms.ModelForm):
         super(CreateUtilisateurForm, self).__init__(*args, **kwargs)
 
         # Ajout des classes
-        self.fields["statut"].widget = forms.RadioSelect(choices=self.fields["statut"].choices,
+        self.fields['statut'].widget = forms.RadioSelect(choices=self.fields["statut"].choices,
                                                          attrs={"class": "radio-inline me-3"})
-        self.fields["entreprise"].widget = forms.RadioSelect(choices=self.fields["entreprise"].choices,
+
+        self.fields['entreprise'].widget = forms.RadioSelect(choices=self.fields["entreprise"].choices,
                                                              attrs={"class": "radio-inline me-3"})
+
         self.fields['role'].widget.attrs['class'] = 'dropdown-groups form-select'
         self.fields['civilite'].widget.attrs['class'] = 'dropdown-groups form-select'
         self.fields['nom'].widget.attrs['class'] = 'form-control'
@@ -29,31 +41,27 @@ class CreateUtilisateurForm(forms.ModelForm):
 
     def save(self, commit=True):
         _lp = '%s.save' % self.__class__.__name__
-        utilisateur = super(CreateUtilisateurForm, self).save(commit=False)
-
         prenom = self.cleaned_data.get('prenom', None)
         nom = self.cleaned_data.get('nom', None)
         email = self.cleaned_data.get('email', None)
         mdp = self.cleaned_data.get('mdp', None)
         role = self.cleaned_data.get('role', None)
-
-        # Création de l'utilisateur
         try:
-            user = create_user_account(email, prenom, nom, mdp)
+            utilisateur = create_user_account(email, prenom, nom, mdp)
+            role.user_set.add(utilisateur)
         except Exception as e:
+            if utilisateur:
+                try:
+                    utilisateur.delete()
+                except Exception as exc:
+                    _errDiscard = 'An error occurred while discarding the user creation for %s: %s' % (
+                        email, type(exc).__name__)
             raise e
-
-        # Ajout du role
-        try:
-            role.user_set.add(user)
-        except Exception as e:
-            user.delete()
-            raise e
-
-        utilisateur.save()
-        self.save_m2m()
+        if commit:
+            utilisateur.save()
+            self.save_m2m()
         return utilisateur
-
+    
 
 class EditUtilisateurForm(forms.ModelForm):
     class Meta:
