@@ -43,6 +43,11 @@ class Apporteur(models.Model):
     Email = models.EmailField(null=True, default="Some String")
     Mdp = models.CharField(max_length=50, null=True)
     Convention = models.FileField(blank=True, null=True)
+
     ExtraPrime = models.DecimalField(max_digits=5, decimal_places=2)
     CoCourtage = models.DecimalField(max_digits=5, decimal_places=2)
+    type_rem = models.CharField(max_length=10, default="", choices=[
+                                                        (ExtraPrime, 'ExtraPrime'),
+                                                        (CoCourtage, 'CoCourtage')
+                                                    ], null=True)
     Interlocuteur = models.ForeignKey(Interlocuteur, on_delete=models.CASCADE)

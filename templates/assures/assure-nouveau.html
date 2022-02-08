@@ -102,14 +102,20 @@
                                 <div class="form-validation">
                                         <div class="row">
                                         	<div class="col-lg-3">
-                                                    <label class="col-lg-12 col-form-label">Code Client <span class="text-danger">*</span>
+                                                    <label for="{{ form.CodeClient.id_for_label }}" class="col-lg-12 col-form-label">Code Client <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="number" class="form-control" placeholder="" required="">
+                                                        <input id="{{ form.CodeClient.id_for_label }}" name="{{ form.CodeClient.html_name }}" {% if form.CodeClient.value %}value="{{ form.CodeClient.value }}"{% endif %} type="number" class="form-control" placeholder="" required="">
+                                                    {% if form.CodeClient.errors %}
+                                                        {% for error in form.CodeClient.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                    {% endif %}
                                                     </div>
                                         	</div>
+
                                         	<div class="col-lg-3">
-                                                    <label class="col-lg-12 col-form-label">Civilité <span class="text-danger">*</span>
+                                                    <label for="{{ form.CIVIL.id_for_label }}" class="col-lg-12 col-form-label">Civilité <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
 														 <select id="single-select" class="form-select">
@@ -119,10 +125,15 @@
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-3">
-                                                    <label class="col-lg-12 col-form-label">Nom <span class="text-danger">*</span>
+                                                    <label for="{{ form.Name.id_for_label }}"  class="col-lg-12 col-form-label">Nom <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
-                                                        <input type="text" class="form-control" placeholder="" required="">
+                                                        <input id="{{ form.Name.id_for_label }}" name="{{ form.Name.html_name }}" {% if form.Name.value %}value="{{ form.Name.value }}"{% endif %} type="text" class="form-control" placeholder="" required="">
+                                                        {% if form.Name.errors %}
+                                                        {% for error in form.Name.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                    {% endif %}
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-3">
