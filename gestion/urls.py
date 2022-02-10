@@ -14,7 +14,7 @@ urlpatterns = [
     path('liste-tache', views.ListTacheView.as_view(), name='liste-tache'),
 
     path('creation-navire', views.CreateNavireView.as_view(), name='creation-navire'),
-    path('modification-navire/<int:pk>', views.EditTacheView.as_view(), name='edition-navire'),
-    path('liste-navire', views.ListTacheView.as_view(), name='liste-navire'),
+    path('modification-navire/<int:pk>', views.EditNavireView.as_view(), name='edition-navire'),
+    path('liste-navire', views.ListNavireView.as_view(), name='liste-navire'),
 
 ]

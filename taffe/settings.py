@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ol6ii@dxh5sl3+u8xylkj1fje6u&-o1phtil$-+-a+=a6==++5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -45,8 +45,10 @@ INSTALLED_APPS = [
     'tier.apps.TierConfig',
     'core.apps.CoreConfig',
     'interlocuteur.apps.InterlocuteurConfig',
-    'gestion.apps.GestionConfig'
+    'gestion.apps.GestionConfig',
 
+    #Debug
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -57,6 +59,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    #Debug
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'taffe.urls'

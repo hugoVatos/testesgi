@@ -3,7 +3,7 @@ from django.db import models
 
 class Navire(models.Model):
     nom_navire = models.CharField(max_length=60)
-    immatriculation = models.CharField(max_length=40, primary_key=True)
+    immatriculation = models.CharField(max_length=40)
     type = models.CharField(max_length=40)
     pavillon = models.CharField(max_length=40)
     annee = models.CharField(max_length=5)
@@ -16,8 +16,6 @@ class Navire(models.Model):
     classe = models.CharField(max_length=40)
     port_attache = models.CharField(max_length=100)
 
-    moteur = models.ManyToManyField('Moteur')
-
     class Meta:
         verbose_name = "navire"
         verbose_name_plural = "navires"
@@ -27,6 +25,7 @@ class Navire(models.Model):
 
 
 class Moteur(models.Model):
+    navire = models.ForeignKey('Navire', on_delete=models.CASCADE)
     puissance_tot = models.IntegerField()
     carburant = models.CharField(max_length=30)
     annee = models.CharField(max_length=5)
@@ -39,4 +38,4 @@ class Moteur(models.Model):
         verbose_name_plural = "moteurs"
 
     def __str__(self):
-        return 'puissance: {0} - carburant: {1}' % {self.puissance_tot, self.carburant}
+        return 'puissance: %s - carburant: %s' % (self.puissance_tot, self.carburant)
