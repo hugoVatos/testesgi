@@ -27,7 +27,7 @@ class ReclamationForm(forms.ModelForm):
             self.fields['fichier'].widget.attrs['class'] = 'form-control'
             self.fields['commentaire_reclamation'].widget.attrs['class'] = 'form-control'
             self.fields['commentaire_reponse'].widget.attrs['class'] = 'form-control'
-        
+
     def save(self, commit=True):
         _lp = '%s.save' % self.__class__.__name__
         reclamation = super(ReclamationForm, self).save(commit=False)

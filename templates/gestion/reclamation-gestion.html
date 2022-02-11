@@ -2,56 +2,62 @@
 {% load static %}
 
 {% block content %}
-<!--**********************************
-            Content body start
- ***********************************-->
-<div class="content-body">
-    <!-- row -->
-    <div class="row page-titles">
-        <ol class="breadcrumb">
-            <li class="breadcrumb-item active"><a href="#">Gestion</a></li>
-            <li class="breadcrumb-item"><a href="#">Réclamations</a></li>
-        </ol>
-    </div>
-    <div class="container-fluid">
+    <!--**********************************
+                Content body start
+     ***********************************-->
+    <div class="content-body">
+        <!-- row -->
+        <div class="row page-titles">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item active"><a href="#">Gestion</a></li>
+                <li class="breadcrumb-item"><a href="#">Réclamations</a></li>
+            </ol>
+        </div>
+        <div class="container-fluid">
 
-        <div class="row">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="table-responsive">
-                            <table id="taffe" class="display" style="min-width: 845px">
-                                <thead>
-                                <tr>
-                                    <th>Date</th>
-                                    <th>Pour Client / Contrat</th>
-                                    <th>Assureur</th>
-                                    <th>Détails</th>
-                                    <th>Statut</th>
-                                    <th style="width: 10%;">Actions</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>01/10/2021</td>
-                                    <td>M. Dupond - #20541</td>
-                                    <td>Amerga</td>
-                                    <td>Délai de traitement</td>
-                                    <td>En cours</td>
-                                    <td class="centrer"><a class="iconmod" href="#"><i class="bi bi-pencil-square"></i></a>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table id="taffe" class="display" style="min-width: 845px">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Pour Client / Contrat</th>
+                                            <th>Assureur</th>
+                                            <th>Détails</th>
+                                            <th>Statut</th>
+                                            <th style="width: 10%;">Actions</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for reclamation in reclamations %}
+                                            <tr>
+                                                <td>{{ reclamation.date_reclamation }}</td>
+                                                <td>{{ reclamation.client }} / {{ reclamation.contrat }}</td>
+                                                <td>{{ reclamation.assureur }}</td>
+                                                <td>{{ reclamation.objet }}</td>
+                                                <td>{{ reclamation.statut }}</td>
+                                                <td class="centrer">
+                                                    <a class="iconmod"
+                                                       href="{% url 'gestion:edition-reclamation' pk=reclamation.pk %}">
+                                                        <i class="bi bi-pencil-fill"></i>
+                                                    </a>
+                                                </td>
+                                            </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</div>
-<!--**********************************
-    Content body end
-***********************************-->
+    </div>
+    <!--**********************************
+        Content body end
+    ***********************************-->
 {% endblock %}

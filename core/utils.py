@@ -2,7 +2,7 @@ import importlib
 import logging
 
 from django.contrib.auth.forms import PasswordResetForm
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, StreamingHttpResponse
 from django.shortcuts import render
 from django.urls import reverse
 
@@ -99,3 +99,22 @@ def password_reset_request(request):
     password_reset_form = PasswordResetForm()
     return render(request=request, template_name="account/password_reset.html",
                   context={"password_reset_form": password_reset_form})
+
+
+def download(request, pk, filename, name):
+    filelocal = 'media/' + str(filename)
+    file = open(filelocal)
+
+    def file_iterator(file_name, chunk_size=512):
+        with open(file_name, 'rb') as f:
+            while True:
+                c = f.read(chunk_size)
+                if c:
+                    yield c
+                else:
+                    break
+
+    response = StreamingHttpResponse(file_iterator(filelocal))
+    response['Content-Type'] = 'application/octet-stream'
+    response['Content-Disposition'] = 'attachment;filename="' + str(name) + '"'
+    return response

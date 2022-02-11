@@ -17,4 +17,8 @@ urlpatterns = [
     path('modification-navire/<int:pk>', views.EditNavireView.as_view(), name='edition-navire'),
     path('liste-navire', views.ListNavireView.as_view(), name='liste-navire'),
 
+    path('creation-reclamation', views.CreateReclamationView.as_view(), name='creation-reclamation'),
+    path('modification-reclamation/<int:pk>', views.EditReclamationView.as_view(), name='edition-reclamation'),
+    path('liste-reclamation', views.ListReclamationView.as_view(), name='liste-reclamation'),
+
 ]
