@@ -32,24 +32,17 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                {% for taxe in taxes %}
                                 <tr>
-                                    <td>FGTI 2021</td>
-                                    <td>FGTI</td>
-                                    <td>2021</td>
-                                    <td class="centrer"></td>
-                                    <td class="centrer"><span class="badge badge-success">15€</span></td>
-                                    <td class="centrer"><a class="iconmod" href="#"><i
+                                    <td>{{ taxe.intitule }}</td>
+                                    <td>{{ taxe.get_type_display }}</td>
+                                    <td>{{ taxe.annee }}</td>
+                                    <td class="centrer">{{ taxe.taux }}</td>
+                                    <td class="centrer"><span class="badge badge-success">{{ taxe.montant }}</span></td>
+                                    <td class="centrer"><a class="iconmod" href="{% url 'gestion:edition-taxe' pk=taxe.pk %}"><i
                                             class="bi bi-pencil-fill"></i></a></td>
                                 </tr>
-                                <tr>
-                                    <td>FGTI 2020</td>
-                                    <td>FGTI</td>
-                                    <td>2020</td>
-                                    <td class="centrer"></td>
-                                    <td class="centrer"><span class="badge badge-success">16€</span></td>
-                                    <td class="centrer"><a class="iconmod" href="#"><i
-                                            class="bi bi-pencil-fill"></i></a></td>
-                                </tr>
+                                {% endfor %}
                                 </tbody>
                             </table>
                         </div>
@@ -57,7 +50,7 @@
                 </div>
             </div>
             <div class="col-12">
-                <a href="../gestion/taxe-nouveau.html" class="btn btn-secondary d-block">Ajouter une taxe</a>
+                <a href="{% url 'gestion:creation-taxe' %}" class="btn btn-secondary d-block">Ajouter une taxe</a>
             </div>
         </div>
     </div>

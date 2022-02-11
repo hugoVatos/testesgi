@@ -138,6 +138,32 @@
 							<span class="nav-text">Réclamations</span>
 						</a>
                     </li>
+                    <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
+						<i class="bi bi-bezier2"></i>
+							<span class="nav-text">Gestion</span>
+						</a>
+                        <ul aria-expanded="false">
+                        	<li><a class="plus" href="{% url 'gestion:creation-utilisateur' %}">Nouvel utilisateur</a></li>
+							<li><a href="{% url 'gestion:liste-utilisateur' %}">Utilisateurs</a></li>
+							<hr>
+							<li><a class="plus" href="{% url 'gestion:creation-tache' %}">Nouvelle tâche</a></li>
+                            <li><a href="{% url 'gestion:liste-tache' %}">Tâches</a></li>
+                         	<hr>
+                            <li><a class="plus" href="{% url 'gestion:creation-reclamation' %}">Nouvelle réclamation</a></li>
+                            <li><a href="{% url 'gestion:liste-reclamation' %}">Réclamations</a></li>
+                            <hr>
+                         	<li><a class="plus" href="{% url 'gestion:creation-navire' %}">Nouveau navire</a></li>
+							<li><a href="{% url 'gestion:liste-navire' %}">Navires</a></li>
+							<hr>
+                            <li><a href="{% url 'gestion:liste-risque' %}">Risques</a></li>
+                            <li><a href="{% url 'gestion:liste-taxe' %}">Taxes</a></li>
+                            <li><a href="./gestion/optiflux.html">Optiflux</a></li>
+                            <hr>
+                            <li><a href="./gestion/ged.html">GED</a></li>
+                            <li><a href="./gestion/devises.html">Devises</a></li>
+                            <li><a href="./gestion/banques.html">Banques</a></li>
+                        </ul>
+                    </li>
                 </ul>
 			</div>
         </div>

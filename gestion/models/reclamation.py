@@ -31,7 +31,7 @@ class Reclamation(models.Model):
     provenance_reclamation = models.CharField(max_length=10, null=False)
     client = models.ForeignKey('tier.Tier', on_delete=models.DO_NOTHING)
     assureur = models.ForeignKey('assureur.Assureur', on_delete=models.DO_NOTHING)
-    contrat = models.CharField(max_length=10)
+    #contrat = models.ForeignKey('contrat.Contrat', on_delete=models.DO_NOTHING)
     auteur = models.ForeignKey('core.Utilisateur', on_delete=models.DO_NOTHING)
     fichier = models.FileField(upload_to=document_file_directory_path, null=False)
     commentaire_reclamation = models.TextField(null=False)

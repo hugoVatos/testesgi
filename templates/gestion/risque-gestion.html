@@ -31,30 +31,16 @@
                                 </tr>
                                 </thead>
                                 <tbody>
+                                {% for risque in risques %}
                                 <tr>
-                                    <td>Plaisance</td>
-                                    <td>Maritime</td>
-                                    <td>Assureur 1</td>
-                                    <td class="centrer"><span class="badge badge-success">150</span></td>
-                                    <td class="centrer"><a class="iconmod" href="#"><i
+                                    <td>{{ risque.intitule }}</td>
+                                    <td>{{ risque.type }}</td>
+                                    <td>{{ risque.assureur }}</td>
+                                    <td class="centrer"><span class="badge badge-success">??</span></td>
+                                    <td class="centrer"><a class="iconmod" href="{% url 'gestion:edition-risque' pk=risque.pk %}"><i
                                             class="bi bi-pencil-fill"></i></a></td>
                                 </tr>
-                                <tr>
-                                    <td>Marchandises Transportees</td>
-                                    <td>Maritime</td>
-                                    <td>Assureur 1</td>
-                                    <td class="centrer"><span class="badge badge-success">230</span></td>
-                                    <td class="centrer"><a class="iconmod" href="#"><i
-                                            class="bi bi-pencil-fill"></i></a></td>
-                                </tr>
-                                <tr>
-                                    <td>Peche</td>
-                                    <td>Maritime</td>
-                                    <td>Assureur 1</td>
-                                    <td class="centrer"><span class="badge badge-success">230</span></td>
-                                    <td class="centrer"><a class="iconmod" href="#"><i
-                                            class="bi bi-pencil-fill"></i></a></td>
-                                </tr>
+                                {% endfor %}
                                 </tbody>
                             </table>
                         </div>
@@ -62,7 +48,7 @@
                 </div>
             </div>
             <div class="col-12">
-                <a href="../gestion/risque-nouveau.html" class="btn btn-secondary d-block">Ajouter un risque</a>
+                <a href="{% url 'gestion:creation-risque' %}" class="btn btn-secondary d-block">Ajouter un risque</a>
             </div>
         </div>
     </div>

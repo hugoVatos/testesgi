@@ -28,14 +28,14 @@ class CreateReclamationView(TemplateView):
             context['form'] = form
             return self.render_to_response(context, status=400)
         try:
-            paie = form.save()
+            reclamation = form.save()
         except Exception as e:
             _msg = 'Une erreur (%s) est survenue lors de la création de la réclamation : %s' % (type(e).__name__, e)
             messages.add_message(request, messages.ERROR,
-                                 message="Une erreur est survenue lors de la création de la paie")
+                                 message="Une erreur est survenue lors de la création de la réclamation")
         else:
-            _msg = 'Réclamation %s (%s) créee avec succès' % (paie.collaborateur.nom, paie.collaborateur.prenom)
-            messages.add_message(request, messages.INFO, message="Paie créee avec succès")
+            _msg = 'Réclamation %s (%s) créee avec succès' % (reclamation.objet, reclamation.statut)
+            messages.add_message(request, messages.INFO, message="Réclamation créee avec succès")
         return self.render_to_response(context, status=201)
 
 
@@ -55,7 +55,7 @@ class EditReclamationView(TemplateView):
         if not form.is_valid():
             context = self.get_context_data(form=form, **kwargs)
             return self.render_to_response(context, status=400)
-        # edite la paie
+        # edite la réclamation
         try:
             reclamation = form.save()
         except Exception as e:
@@ -71,7 +71,7 @@ class EditReclamationView(TemplateView):
         return self.render_to_response(context, status=200)
 
 
-def download_paie(request, pk):
+def download_reclamation(request, pk):
     reclamation = Reclamation.objects.filter(pk=pk)[0]
     filename = reclamation.fiche_pdf
     name = str(filename).split('/')[-1]

@@ -65,14 +65,14 @@
 
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <label class="col-lg-12 col-form-label" for="validationCustom01">Role<span
+                                            <label class="col-lg-12 col-form-label" for="{{ form.role.id_for_label }}">Role<span
                                                     class="text-danger">*</span></label>
                                             <div class="col-lg-12">
                                                 {{ form.role }}
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label">Civilité <span
+                                            <label class="col-lg-12 col-form-label" for="{{ form.civilite.id_for_label }}">Civilité <span
                                                     class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-12">
@@ -80,7 +80,7 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label">Nom <span
+                                            <label class="col-lg-12 col-form-label" for="{{ form.nom.id_for_label }}">Nom <span
                                                     class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-12">
@@ -88,7 +88,7 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label">Prénom(s) <span
+                                            <label class="col-lg-12 col-form-label" for="{{ form.prenom.id_for_label }}">Prénom(s) <span
                                                     class="text-danger">*</span>
                                             </label>
                                             <div class="col-lg-12">
@@ -96,21 +96,21 @@
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label">Email<span
+                                            <label class="col-lg-12 col-form-label" for="{{ form.email.id_for_label }}">Email<span
                                                     class="text-danger">*</span></label>
                                             <div class="col-lg-12">
                                                 {{ form.email }}
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label">Mot de passe<span
+                                            <label class="col-lg-12 col-form-label" for="{{ form.mdp.id_for_label }}">Mot de passe<span
                                                     class="text-danger">*</span></label>
                                             <div class="col-lg-12">
                                                 {{ form.mdp }}
                                             </div>
                                         </div>
                                         <div class="col-lg-4">
-                                            <label class="col-lg-12 col-form-label">Avatar<span
+                                            <label class="col-lg-12 col-form-label" for="{{ form.avatar.id_for_label }}">Avatar<span
                                                     class="text-danger">*</span></label>
                                             <div class="col-lg-12">
                                                 {{ form.avatar }}

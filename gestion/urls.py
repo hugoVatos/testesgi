@@ -21,4 +21,14 @@ urlpatterns = [
     path('modification-reclamation/<int:pk>', views.EditReclamationView.as_view(), name='edition-reclamation'),
     path('liste-reclamation', views.ListReclamationView.as_view(), name='liste-reclamation'),
 
+    path('creation-risque', views.CreateRisqueView.as_view(), name='creation-risque'),
+    path('modification-risque/<int:pk>', views.EditRisqueView.as_view(), name='edition-risque'),
+    path('liste-risque', views.ListRisqueView.as_view(), name='liste-risque'),
+
+    path(r'download-reclamation/<int:pk>', views.download_reclamation, name="telechargement-reclamation"),
+    path(r'download-risque/<int:pk>', views.download_risque, name="telechargement-risque"),
+
+    path('creation-taxe', views.CreateTaxeView.as_view(), name='creation-taxe'),
+    path('modification-taxe/<int:pk>', views.EditTaxeView.as_view(), name='edition-taxe'),
+    path('liste-taxe', views.ListTaxeView.as_view(), name='liste-taxe'),
 ]
