@@ -125,6 +125,18 @@
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-3">
+                                                    <label for="{{ form.Last_Name.id_for_label }}"  class="col-lg-12 col-form-label">Nom <span class="text-danger">*</span>
+                                                    </label>
+                                                    <div class="col-lg-12">
+                                                        <input id="{{ form.Last_Name.id_for_label }}" name="{{ form.Last_Name.html_name }}" {% if form.Last_Name.value %}value="{{ form.Last_Name.value }}"{% endif %} type="text" class="form-control" placeholder="" required="">
+                                                        {% if form.Last_Name.errors %}
+                                                        {% for error in form.Last_Name.errors %}
+                                                            <p class="text-danger">{{ error|escape }}</p>
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                    </div>
+                                        	</div>
+                                        	<div class="col-lg-3">
                                                     <label for="{{ form.Name.id_for_label }}"  class="col-lg-12 col-form-label">Nom <span class="text-danger">*</span>
                                                     </label>
                                                     <div class="col-lg-12">
@@ -134,13 +146,6 @@
                                                             <p class="text-danger">{{ error|escape }}</p>
                                                         {% endfor %}
                                                     {% endif %}
-                                                    </div>
-                                        	</div>
-                                        	<div class="col-lg-3">
-                                                    <label class="col-lg-12 col-form-label">Prénom(s) <span class="text-danger">*</span>
-                                                    </label>
-                                                    <div class="col-lg-12">
-                                                        <input type="text" class="form-control" placeholder="" required="">
                                                     </div>
                                         	</div>
                                         	<div class="col-lg-4">

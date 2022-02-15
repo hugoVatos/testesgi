@@ -1,8 +1,8 @@
 from django.db import models
 from interlocuteur.models import Interlocuteur
 
-class Apporteur(models.Model):
 
+class Apporteur(models.Model):
     SAS = 'SAS'
     SARL = 'SARL'
     Type_1 = 'type 1'
@@ -14,18 +14,17 @@ class Apporteur(models.Model):
     Option_2 = 'option 2'
     Option_3 = 'option 3'
 
-
     Image = models.FileField(blank=True, null=True)
     DenoSc = models.CharField(max_length=50, null=True)
     Siren = models.CharField(max_length=50, null=True)
     StatSc = models.CharField(max_length=50, choices=[
-                                                        (SAS, 'SAS'),
-                                                        (SARL, 'SARL')
-                                                    ], null=True)
+        (SAS, 'SAS'),
+        (SARL, 'SARL')
+    ], null=True)
     Type_Apporteur = models.CharField(max_length=50, default="", choices=[
-                                                        (Type_1, 'type 1'),
-                                                        (Type_2, 'type 2')
-                                                    ], null=True)
+        (Type_1, 'type 1'),
+        (Type_2, 'type 2')
+    ], null=True)
     Adress_siege1 = models.CharField(max_length=50)
     Adress_siege2 = models.CharField(max_length=50)
     Adress_siege3 = models.CharField(max_length=50)
@@ -33,13 +32,13 @@ class Apporteur(models.Model):
     CP = models.CharField(max_length=50)
     City = models.CharField(max_length=50)
     Country = models.CharField(max_length=50, choices=[
-                                                    (France, 'france'),
-                                                    (Suisse, 'suisse'),
-                                                    (Monaco, 'monaco'),
-                                                    (Option_1, 'option 1'),
-                                                    (Option_2, 'option 2'),
-                                                    (Option_3, 'option 3')
-                                                    ], null=True)
+        (France, 'france'),
+        (Suisse, 'suisse'),
+        (Monaco, 'monaco'),
+        (Option_1, 'option 1'),
+        (Option_2, 'option 2'),
+        (Option_3, 'option 3')
+    ], null=True)
     Email = models.EmailField(null=True, default="Some String")
     Mdp = models.CharField(max_length=50, null=True)
     Convention = models.FileField(blank=True, null=True)
@@ -47,7 +46,7 @@ class Apporteur(models.Model):
     ExtraPrime = models.DecimalField(max_digits=5, decimal_places=2)
     CoCourtage = models.DecimalField(max_digits=5, decimal_places=2)
     type_rem = models.CharField(max_length=10, default="", choices=[
-                                                        (ExtraPrime, 'ExtraPrime'),
-                                                        (CoCourtage, 'CoCourtage')
-                                                    ], null=True)
+        (ExtraPrime, 'ExtraPrime'),
+        (CoCourtage, 'CoCourtage')
+    ], null=True)
     Interlocuteur = models.ForeignKey(Interlocuteur, on_delete=models.CASCADE)

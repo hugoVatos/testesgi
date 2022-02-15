@@ -195,15 +195,14 @@
 
 
                                         	<div class="col-lg-6">
-                                                    <label for="{{ form.type_rem.id_for_label }}" class="col-lg-12 col-form-label">Type de rémunération (En %)</label>
-                                                    <div class="col-lg-12">
-						                                {{ form.type_rem }}
-                                                        {% if form.type_rem.errors %}
-                                                        {% for error in form.type_rem.errors %}
-                                                            <p class="text-danger">{{ error|escape }}</p>
-                                                        {% endfor %}
-                                                        {% endif %}
-                                                    </div>
+                                                    <label class="col-lg-12 col-form-label">Type de rémunération (En %)</label>
+                                                <div class="col-lg-12">
+                                                       <select id="typerem" class="dropdown-groups form-select" onchange="findmyvalue()">
+                                                           <option value="">Choisir le type de rémunération</option>
+                                                           <option value="cocourtage">Co-courtage</option>
+                                                           <option value="extraprime">Extra-prime</option>
+                                                       </select>
+                                                </div>
                                         	</div>
 		                                    <script type="text/javascript">
 											function findmyvalue() {
@@ -226,14 +225,14 @@
                                         	<div class="col-lg-12 cocourtage">
                                                     <label class="col-lg-12 col-form-label">Taux Co-courtage</label>
                                                     <div class="col-lg-12">
-						                                  <input id="{{ form.CoCourtage.id_for_label }}" name="{{ form.CoCourtage.html_name }}" {% if form.CoCourtage.value %}value="{{ form.CoCourtage.value }}"{% endif %} type="file" class="form-file-input form-control" style="padding: 10px 16px;">
+						                                  <input id="{{ form.CoCourtage.id_for_label }}" name="{{ form.CoCourtage.html_name }}" {% if form.CoCourtage.value %}value="{{ form.CoCourtage.value }}"{% endif %} class="form-control"   style="padding: 10px 16px;">
                                                     </div>
                                         	</div>
 
                                         	<div id="" class="col-lg-12 extraprime">
                                                     <label class="col-lg-12 col-form-label">Extraprime</label>
                                                     <div class="col-lg-12">
-						                                 <input id="{{ form.ExtraPrime.id_for_label }}" name="{{ form.ExtraPrime.html_name }}" {% if form.ExtraPrime.value %}value="{{ form.ExtraPrime.value }}"{% endif %} type="file" class="form-file-input form-control" style="padding: 10px 16px;">
+						                                 <input id="{{ form.ExtraPrime.id_for_label }}" name="{{ form.ExtraPrime.html_name }}" {% if form.ExtraPrime.value %}value="{{ form.ExtraPrime.value }}"{% endif %} class="form-control"   style="padding: 10px 16px;">
                                                     </div>
                                         	</div>
                                         	</div>
