@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!--**********************************
+            Content body start
+***********************************-->
+<div class="content-body">
+    <!-- row -->
+    <div class="row page-titles">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><a href="#">Contrats</a></li>
+            <li class="breadcrumb-item"><a href="#">Taxes</a></li>
+        </ol>
+    </div>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="taffe" class="display" style="min-width: 845px">
+                                <thead>
+                                <tr>
+                                    <th>Taxe</th>
+                                    <th>Type</th>
+                                    <th>Année</th>
+                                    <th style="width: 15%;">Taux</th>
+                                    <th style="width: 15%;">Montant</th>
+                                    <th style="width: 10%;">Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for taxe in taxes %}
+                                <tr>
+                                    <td>{{ taxe.intitule }}</td>
+                                    <td>{{ taxe.get_type_display }}</td>
+                                    <td>{{ taxe.annee }}</td>
+                                    <td class="centrer">{{ taxe.taux }}</td>
+                                    <td class="centrer"><span class="badge badge-success">{{ taxe.montant }}</span></td>
+                                    <td class="centrer"><a class="iconmod" href="{% url 'gestion:edition-taxe' pk=taxe.pk %}"><i
+                                            class="bi bi-pencil-fill"></i></a></td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <a href="{% url 'gestion:creation-taxe' %}" class="btn btn-secondary d-block">Ajouter une taxe</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--**********************************
+    Content body end
+***********************************-->
+{% endblock %}

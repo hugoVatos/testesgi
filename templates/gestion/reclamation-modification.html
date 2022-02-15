@@ -1,0 +1,233 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!--**********************************
+    Content body start
+***********************************-->
+<div class="content-body">
+    <!-- row -->
+    <div class="row page-titles">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><a href="#">Gestion</a></li>
+            <li class="breadcrumb-item"><a href="#">Modification réclamation</a></li>
+        </ol>
+    </div>
+    <div class="container-fluid">
+        <form class="needs-validation" method="post" novalidate>
+        {% csrf_token %}
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header"><h4 class="card-title">Réclamation</h4></div>
+                        <div class="card-body">
+                            <div class="form-validation">
+
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.statut.id_for_label }}">Statut <span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            {{ form.statut }}
+                                            {% if form.statut.errors %}
+                                                {% for error in form.statut.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.objet.id_for_label }}">Objet <span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            {{ form.objet }}
+                                            {% if form.objet.errors %}
+                                                {% for error in form.objet.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.date_reclamation.id_for_label }}">Date de la réclamation <span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            {{ form.date_reclamation }}
+                                            {% if form.date_reclamation.errors %}
+                                                {% for error in form.date_reclamation.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.date_saisie.id_for_label }}">Date de saisie <span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            {{ form.date_saisie }}
+                                            {% if form.date_saisie.errors %}
+                                                {% for error in form.date_saisie.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.date_reception.id_for_label }}"> Date d'accusé de réception <span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            {{ form.date_reception }}
+                                            {% if form.date_reception.errors %}
+                                                {% for error in form.date_reception.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.date_reponse.id_for_label }}"> Date de la réponse <span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            {{ form.date_reponse }}
+                                            {% if form.date_reponse.errors %}
+                                                {% for error in form.date_reponse.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.canal_arrivee.id_for_label }}"> Canal d'arrivée <span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                           {{ form.canal_arrivee }}
+                                            {% if form.canal_arrivee.errors %}
+                                                {% for error in form.canal_arrivee.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.provenance_reclamation.id_for_label }}"> Provenance de la réclamation <span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            {{ form.provenance_reclamation }}
+                                            {% if form.provenance_reclamation.errors %}
+                                                {% for error in form.provenance_reclamation.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-3">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.client.id_for_label }}">Client</label>
+                                        <div class="col-lg-12">
+                                            {{ form.client }}
+                                            {% if form.client.errors %}
+                                                {% for error in form.client.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.assureur.id_for_label }}">Assureur</label>
+                                        <div class="col-lg-12">
+                                            {{ form.assureur }}
+                                            {% if form.assureur.errors %}
+                                                {% for error in form.assureur.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.contrat.id_for_label }}">Contrat</label>
+                                        <div class="col-lg-12">
+                                            {{ form.contrat }}
+                                            {% if form.contrat.errors %}
+                                                {% for error in form.contrat.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.auteur.id_for_label }}">Auteur</label>
+                                        <div class="col-lg-12">
+                                            {{ form.auteur }}
+                                            {% if form.auteur.errors %}
+                                                {% for error in form.auteur.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.fichier.id_for_label }}">Fichiers<span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            {{ form.fichier }}
+                                            {% if form.fichier.errors %}
+                                                {% for error in form.fichier.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.commentaire_reclamation.id_for_label }}">Commentaire Réclamation<span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            {{ form.commentaire_reclamation }}
+                                            {% if form.commentaire_reclamation.errors %}
+                                                {% for error in form.commentaire_reclamation.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-12">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.commentaire_reponse.id_for_label }}">Commentaire Réponse</label>
+                                        <div class="col-lg-12">
+                                            {{ form.commentaire_reponse }}
+                                            {% if form.commentaire_reponse.errors %}
+                                                {% for error in form.commentaire_reponse.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-12 ms-auto">
+                                    <button type="submit" class="btn btn-primary valider">Valider</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<!--**********************************
+    Content body end
+***********************************-->
+{% endblock %}

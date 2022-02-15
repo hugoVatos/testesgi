@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!--**********************************
+            Content body start
+***********************************-->
+<div class="content-body">
+    <!-- row -->
+    <div class="row page-titles">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><a href="#">Contrats</a></li>
+            <li class="breadcrumb-item"><a href="#">Modification risque</a></li>
+        </ol>
+    </div>
+    <div class="container-fluid">
+        <form class="needs-validation" novalidate="">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-header"><h4 class="card-title"> Modification Risque</h4></div>
+                        <div class="card-body">
+                            <div class="form-validation">
+
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.type.id_for_label }}">Type</label>
+                                        <div class="col-lg-12">
+                                            {{ form.type }}
+                                            {% if form.type.errors %}
+                                                {% for error in form.type.errors %}
+                                                    <p class="text-danger">{{ error|escape }}</p>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.intitule.id_for_label }}">Intitulé<span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            {{ form.intitule }}
+                                                {% if form.intitule.errors %}
+                                                    {% for error in form.intitule.errors %}
+                                                        <p class="text-danger">{{ error|escape }}</p>
+                                                    {% endfor %}
+                                                {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.assureur.id_for_label }}">Assureur<span
+                                                class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            {{ form.assureur }}
+                                                {% if form.assureur.errors %}
+                                                    {% for error in form.assureur.errors %}
+                                                        <p class="text-danger">{{ error|escape }}</p>
+                                                    {% endfor %}
+                                                {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.doc_cg.id_for_label }}">CG<span class="text-danger">*</span>
+                                        </label>
+                                        <div class="col-lg-12">
+                                            {{ form.doc_cg }}
+                                                {% if form.doc_cg.errors %}
+                                                    {% for error in form.doc_cg.errors %}
+                                                        <p class="text-danger">{{ error|escape }}</p>
+                                                    {% endfor %}
+                                                {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.doc_ipid.id_for_label }}">IPID<span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-lg-12">
+                                            {{ form.doc_ipid }}
+                                                {% if form.doc_ipid.errors %}
+                                                    {% for error in form.doc_ipid.errors %}
+                                                        <p class="text-danger">{{ error|escape }}</p>
+                                                    {% endfor %}
+                                                {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.doc_fc.id_for_label }}">FC<span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-lg-12">
+                                            {{ form.doc_fc }}
+                                                {% if form.doc_fc.errors %}
+                                                    {% for error in form.doc_fc.errors %}
+                                                        <p class="text-danger">{{ error|escape }}</p>
+                                                    {% endfor %}
+                                                {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <label class="col-lg-12 col-form-label" for="{{ form.doc_cp.id_for_label }}">CP<span
+                                                class="text-danger">*</span></label>
+                                        <div class="col-lg-12">
+                                            {{ form.doc_cp }}
+                                                {% if form.doc_cp.errors %}
+                                                    {% for error in form.doc_cp.errors %}
+                                                        <p class="text-danger">{{ error|escape }}</p>
+                                                    {% endfor %}
+                                                {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12 ms-auto">
+                                    <button type="submit" class="btn btn-primary valider">Valider</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<!--**********************************
+    Content body end
+***********************************-->
+{% endblock %}

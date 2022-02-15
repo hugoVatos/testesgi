@@ -40,24 +40,30 @@ SECRET_KEY = 'django-insecure-ol6ii@dxh5sl3+u8xylkj1fje6u&-o1phtil$-+-a+=a6==++5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
+    'django.contrib.admindocs',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'apporteur.apps.ApporteurConfig',
     'assure.apps.AssureConfig',
     'assureur.apps.AssureurConfig',
     'courtier.apps.CourtierConfig',
     'tier.apps.TierConfig',
     'core.apps.CoreConfig',
-    'interlocuteur.apps.InterlocuteurConfig'
+    'interlocuteur.apps.InterlocuteurConfig',
+    'gestion.apps.GestionConfig',
+
+    #Debug
+    "debug_toolbar",
 ]
 
 MIDDLEWARE = [
@@ -68,6 +74,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    #Debug
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
 ]
 
 ROOT_URLCONF = 'taffe.urls'
@@ -137,6 +146,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_URL = '/media/'
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

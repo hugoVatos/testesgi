@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!--**********************************
+            Content body start
+***********************************-->
+<div class="content-body">
+    <!-- row -->
+    <div class="row page-titles">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active"><a href="#">Contrats</a></li>
+            <li class="breadcrumb-item"><a href="#">Risques</a></li>
+        </ol>
+    </div>
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="taffe" class="display" style="min-width: 845px">
+                                <thead>
+                                <tr>
+                                    <th>Risque</th>
+                                    <th>Type</th>
+                                    <th>Assureur</th>
+                                    <th style="width: 15%;">Contrats Souscrits</th>
+                                    <th style="width: 10%;">Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for risque in risques %}
+                                <tr>
+                                    <td>{{ risque.intitule }}</td>
+                                    <td>{{ risque.type }}</td>
+                                    <td>{{ risque.assureur }}</td>
+                                    <td class="centrer"><span class="badge badge-success">??</span></td>
+                                    <td class="centrer"><a class="iconmod" href="{% url 'gestion:edition-risque' pk=risque.pk %}"><i
+                                            class="bi bi-pencil-fill"></i></a></td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <a href="{% url 'gestion:creation-risque' %}" class="btn btn-secondary d-block">Ajouter un risque</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--**********************************
+    Content body end
+***********************************-->
+{% endblock %}
