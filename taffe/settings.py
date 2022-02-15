@@ -12,9 +12,24 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import taffe
+import subprocess
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Commit git dans le numéro de version
+
+
+try:
+    GIT_COMMIT_HASH = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], cwd=BASE_DIR).decode(
+        "utf-8").strip()
+    GIT_COMMIT_DATE = subprocess.check_output(["git", "show", "-s", "--format=%cd", "--date=format:%d/%m/%Y"],
+                                              cwd=BASE_DIR).decode("utf-8").strip()
+    APP_VERSION_NUMBER = taffe.__version__ + " du " + GIT_COMMIT_DATE + " (" + GIT_COMMIT_HASH + ")"
+except:
+    APP_VERSION_NUMBER = taffe.__version__
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -69,6 +84,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'core.context_processors.selected_settings',
+
             ],
         },
     },
