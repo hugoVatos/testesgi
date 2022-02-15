@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import environ
 from pathlib import Path
 import os
 import taffe
@@ -20,8 +21,6 @@ import subprocess
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Commit git dans le numéro de version
-
-
 try:
     GIT_COMMIT_HASH = subprocess.check_output(["git", "rev-parse", "--short", "HEAD"], cwd=BASE_DIR).decode(
         "utf-8").strip()
@@ -30,17 +29,23 @@ try:
     APP_VERSION_NUMBER = taffe.__version__ + " du " + GIT_COMMIT_DATE + " (" + GIT_COMMIT_HASH + ")"
 except:
     APP_VERSION_NUMBER = taffe.__version__
+	
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False),
+    SECURE_SSL_REDIRECT=(bool, True)
+)
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
+# Take environment variables from .env file
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-ol6ii@dxh5sl3+u8xylkj1fje6u&-o1phtil$-+-a+=a6==++5'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env('DEBUG')
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = tuple(env.list('DJANGO_ALLOWED_HOSTS', default=[]))
 
 # Application definition
 
@@ -60,10 +65,7 @@ INSTALLED_APPS = [
     'tier.apps.TierConfig',
     'core.apps.CoreConfig',
     'interlocuteur.apps.InterlocuteurConfig',
-    'gestion.apps.GestionConfig',
-
-    #Debug
-    "debug_toolbar",
+    'gestion.apps.GestionConfig'
 ]
 
 MIDDLEWARE = [
@@ -73,10 +75,7 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    #Debug
-    "debug_toolbar.middleware.DebugToolbarMiddleware",
+    'django.middleware.clickjacking.XFrameOptionsMiddleware'
 ]
 
 ROOT_URLCONF = 'taffe.urls'
@@ -107,8 +106,12 @@ WSGI_APPLICATION = 'taffe.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': env('DATABASE_ENGINE'),
+		'HOST': env('DATABASE_HOST'),
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_USER_PASSWORD'),
+        'PORT': env('DATABASE_PORT'),
     }
 }
 LOGIN_URL = '/connexion'
@@ -136,7 +139,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fr-fr'
 
 TIME_ZONE = 'UTC'
 
