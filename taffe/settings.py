@@ -106,8 +106,8 @@ WSGI_APPLICATION = 'taffe.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'HOST': env('DATABASE_HOST'),
+        'ENGINE': env('DATABASE_ENGINE'),
+		'HOST': env('DATABASE_HOST'),
         'NAME': env('DATABASE_NAME'),
         'USER': env('DATABASE_USER'),
         'PASSWORD': env('DATABASE_USER_PASSWORD'),
