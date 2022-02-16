@@ -7,3 +7,4 @@ Pillow==8.3.2
 python-http-client==3.3.3
 requests~=2.27.1
 django-environ==0.8.1
+python-gettext==4.0
